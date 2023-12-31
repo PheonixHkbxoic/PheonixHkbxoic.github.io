@@ -24,6 +24,6 @@ go.work
 
 # hugo
 .hugo_build.lock
-
+public/
 
 .idea/
