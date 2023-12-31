@@ -19,3 +19,11 @@
 
 # Go workspace file
 go.work
+
+
+
+# hugo
+.hugo_build.lock
+
+
+.idea/

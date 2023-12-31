@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PheonixHkbxoic</title>
+    <link>https://PheonixHkbxoic.github.io/docs/</link>
+    <description>Recent content on PheonixHkbxoic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Dec 2023 11:13:42 +0800</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>变量声明与赋值</title>
+      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/variable_declaration/</link>
+      <pubDate>Wed, 20 Dec 2023 22:15:37 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/variable_declaration/</guid>
+      <description>Go 中命名规则是，名称以字母或下划线开头，后面可跟任意数量的字符、数字和下划线，字符区分大小写，名称本身没有长度限制，但是 Go 的编程风格倾向于使用短名称，特别是局部变量</description>
+    </item>
+    
+    <item>
+      <title>感悟</title>
+      <link>https://PheonixHkbxoic.github.io/docs/posts/life/life-perception-2023-12-29/</link>
+      <pubDate>Fri, 29 Dec 2023 11:13:42 +0800</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/posts/life/life-perception-2023-12-29/</guid>
+      <description>生活是一场修行 不断感悟，不断修行</description>
+    </item>
+    
+    <item>
+      <title>旅行</title>
+      <link>https://PheonixHkbxoic.github.io/docs/posts/life/life-travel-2023-12-30/</link>
+      <pubDate>Fri, 29 Dec 2023 11:13:42 +0800</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/posts/life/life-travel-2023-12-30/</guid>
+      <description>生活是一场旅行 旅行的意义就是在路上，然后看不同的风景</description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://PheonixHkbxoic.github.io/docs/posts/java/spring/</link>
+      <pubDate>Fri, 29 Dec 2023 11:13:18 +0800</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/posts/java/spring/</guid>
+      <description>Spring Java是世界上最好的语言.go SpringBoot nacos SpringCloud fein,raibon</description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://PheonixHkbxoic.github.io/docs/posts/python/gpt/</link>
+      <pubDate>Fri, 29 Dec 2023 11:13:18 +0800</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/posts/python/gpt/</guid>
+      <description>GPT python ai crawler</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://PheonixHkbxoic.github.io/docs/about/</link>
+      <pubDate>Wed, 20 Dec 2023 14:46:08 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/about/</guid>
+      <description>关于我 A javaer, gopher coding and coding</description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>https://PheonixHkbxoic.github.io/docs/links/</link>
+      <pubDate>Wed, 20 Dec 2023 14:46:08 +0800</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/links/</guid>
+      <description>友情链接 Hugo</description>
+    </item>
+    
+    
+    
+  </channel>
+</rss>

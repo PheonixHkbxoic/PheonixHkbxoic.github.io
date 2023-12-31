@@ -1,0 +1,107 @@
+
+BaseUrl: "https://PheonixHkbxoic.github.io/docs/"
+LanguageCode: "en-us"
+Title: "PheonixHkbxoic"
+
+theme: "PaperMod"
+
+enableInlineShortcodes: true
+enableEmoji: true # 允许使用 Emoji 表情，建议 true
+enableRobotsTXT: true # 允许爬虫抓取到搜索引擎，建议 true
+
+hasCJKLanguage: true # 自动检测是否包含 中文日文韩文 如果文章中使用了很多中文引号的话可以开启
+
+buildDrafts: true
+buildFuture: false
+buildExpired: false
+
+#googleAnalytics: UA-123-45 # 谷歌统计
+# Copyright: Sulv
+
+paginate: 15    # 首页每页显示的文章数
+
+minify:
+    disableXML: true
+    # minifyOutput: true
+
+permalinks:
+  post: "/:title/"
+  # post: "/:year/:month/:day/:title/"
+
+#defaultContentLanguage: en # 最顶部首先展示的语言页面
+#defaultContentLanguageInSubdir: true
+outputs:
+    home: ["HTML", "RSS", "JSON"]
+
+  
+menu:
+  main:
+    - identifier: home
+      name:   主页
+      pageRef: /
+      weight: 1
+    - identifier: search
+      name:   搜索
+      pageRef: search
+      weight: 2
+    - identifier: Go
+      name:   Go
+      pageRef: /posts/golang/
+      weight: 3
+    - identifier: posts
+      name:   文章
+      pageRef: posts
+      weight: 4
+    - identifier: tags
+      name:   标签
+      pageRef: tags
+      weight: 15
+    - identifier: categories
+      name: 分类
+      pageRef: categories
+      weight: 20
+    - identifier: archives
+      name: 时间轴
+      pageRef: archives
+      weight: 30
+    - identifier: about
+      name:   ‍关于
+      pageRef: about
+      weight: 50
+
+
+Params:
+  #env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "PheonixHkbxoic 个人博客, hugo Papermod 主题, 读书笔记, 张昌辉个人博客"
+  author: PheonixHkbxoic
+  DateFormat: "2006-01-02"
+  #ShowShareButtons: true
+  ShowReadingTime: true # disableSpecialistPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  hideFooter: false # 隐藏页脚
+  ShowWordCounts: true
+  VisitCount: true
+  ShowVisitCount: true
+  ShowLastMod: true #显示文章更新时间
+  hideTitle: true
+  disableSpecial1stPost: true # 首页第一个文章是否特殊显示
+    
+taxonomies:
+  category: categories
+  tag: tags
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # HUGO 默认转义 Markdown 文件中的 HTML 代码，如需开启的话
+  highlight:
+    # anchorLineNos: true
+    codeFences: true  
+    guessSyntax: true
+    lineNos: true
+    # noClasses: false
+    # style: monokai
+    style: darcula
