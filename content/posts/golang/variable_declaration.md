@@ -1,31 +1,26 @@
 ---
-Title: "变量声明与赋值"
+Title: "GO:变量声明与赋值"
 Date: 2023-12-20 22:15:37
-draft: true
-description: "Go 中命名规则是，名称以字母或下划线开头，后面可跟任意数量的字符、数字和下划线，字符区分大小写，名称本身没有长度限制，但是 Go 的编程风格倾向于使用短名称，特别是局部变量"
-lastMod: 2023-12-29
+draft: false
+description: ""
+lastMod: 2024-1-1
 cover:
     hidden: false
-    image: "post/golang-001.jpeg"
-weight: 100
+    image: "post/golang-variable.jpeg"
+weight: 1
 
 categories: [golang]
 
-tags:
-- 变量
-- 声明
-- 赋值
+tags: [变量, 声明, 赋值,常量,零值,默认值]
 
-slug: ""
-comments: true
-TocOpen: true # 自动展开目录
-hidemeta: false # 是否隐藏文章的元信息，如发布日期、作者等
-disableShare: true # 底部不显示分享栏
-showbreadcrumbs: true #顶部显示当前路径
+ShowToc: true           # 显示toc
+TocOpen: true           # 自动展开目录
+hideMeta: false         # 是否隐藏文章的元信息，如发布日期、作者等
+# disableShare: true    # 底部不显示分享栏
 
 ---
 
-## 变量声明与赋值
+## 一、变量声明与赋值
 
 Go 中命名规则是，名称以字母或下划线开头，后面可跟任意数量的字符、数字和下划线，字符区分大小写，名称本身没有长度限制，但是 Go 的编程风格倾向于使用短名称，特别是局部变量.
 
@@ -122,3 +117,51 @@ var mx int = int(5.0)
 mii, _ := strconv.Atoi("5.0")
 fmt.Println(mx, mii)
 ```
+
+
+### 常量
+```golang
+const a = 5
+const b float32 = 5.0
+const c = "abc"
+
+const (
+    x = true
+    y = complex(3.0, 2.0)
+    z uint = 5
+    m = iota
+)
+```
+
+- 常量类型可以省略，由编译器自动推断，是在编译时预告处理的，而不是在运行时
+- 常量只能是基本数据类型，包括整数、浮点数、布尔值和字符串
+- 常量不允许被重复定义
+
+
+## 二、常见类型
+布尔bool, 字符串string, 整数(integer)，浮点数(float)，复数(complex)  
+接口interface{}，结构体struct，数组(array)，切片(slice)，通道chan，字典map，函数func()  
+括号中的类型并不存在，只是一个统称  
+
+
+整数：byte, int(默认), int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64, rune, uintptr  
+浮点数：float32(默认), float64  
+复数：complex64, complex128  
+
+注: 
+- byte=uint8, rune=int32, 而int、uint、uintptr的大小是不确定的，取决取系统，可能为32或64位
+- uintptr只是一个无符号整形，一般是地址值，不是指针，不参与gc，需要通过uintptr(unsafe.Pointer(指针变量))强转得到
+- unsafe.Pointer指针对象，参与gc，可通过unsafe.Pointer(指针变量)得到
+- any任意类型，即interface{}接口
+
+## 三、零值，默认值
+1. bool: false
+2. string: ""
+3. 整数：0
+4. 浮点数：0
+5. 复数: (0+0i)
+6. 数组：元素的默认值
+7. 结构体：字段类型的默认值
+8. 接口，数组，切片，通道，字典，函数的零值都是nil，但数组与切片的默认值为[],字典的默认值为[]
+
+注：不同类型的值不能相互比较，nil实际上也有很多类型，不同类型的nil也不相等，nil != nil

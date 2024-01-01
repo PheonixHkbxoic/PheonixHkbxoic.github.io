@@ -5,8 +5,26 @@
     <link>https://PheonixHkbxoic.github.io/docs/tags/</link>
     <description>Recent content in Tags on PheonixHkbxoic</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 20 Dec 2023 22:15:37 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>string</title>
+      <link>https://PheonixHkbxoic.github.io/docs/tags/string/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/tags/string/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>字符串</title>
+      <link>https://PheonixHkbxoic.github.io/docs/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>变量</title>
       <link>https://PheonixHkbxoic.github.io/docs/tags/%E5%8F%98%E9%87%8F/</link>
@@ -17,11 +35,11 @@
     </item>
     
     <item>
-      <title>声明</title>
-      <link>https://PheonixHkbxoic.github.io/docs/tags/%E5%A3%B0%E6%98%8E/</link>
+      <title>常量</title>
+      <link>https://PheonixHkbxoic.github.io/docs/tags/%E5%B8%B8%E9%87%8F/</link>
       <pubDate>Wed, 20 Dec 2023 22:15:37 +0000</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/tags/%E5%A3%B0%E6%98%8E/</guid>
+      <guid>https://PheonixHkbxoic.github.io/docs/tags/%E5%B8%B8%E9%87%8F/</guid>
       <description></description>
     </item>
     
@@ -31,6 +49,33 @@
       <pubDate>Wed, 20 Dec 2023 22:15:37 +0000</pubDate>
       
       <guid>https://PheonixHkbxoic.github.io/docs/tags/%E8%B5%8B%E5%80%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>零值</title>
+      <link>https://PheonixHkbxoic.github.io/docs/tags/%E9%9B%B6%E5%80%BC/</link>
+      <pubDate>Wed, 20 Dec 2023 22:15:37 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/tags/%E9%9B%B6%E5%80%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>默认值</title>
+      <link>https://PheonixHkbxoic.github.io/docs/tags/%E9%BB%98%E8%AE%A4%E5%80%BC/</link>
+      <pubDate>Wed, 20 Dec 2023 22:15:37 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/tags/%E9%BB%98%E8%AE%A4%E5%80%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>声明</title>
+      <link>https://PheonixHkbxoic.github.io/docs/tags/%E5%A3%B0%E6%98%8E/</link>
+      <pubDate>Wed, 20 Dec 2023 22:15:37 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/tags/%E5%A3%B0%E6%98%8E/</guid>
       <description></description>
     </item>
     

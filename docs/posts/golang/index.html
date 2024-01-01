@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="zh" dir="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +19,7 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <link rel="alternate" type="application/rss+xml" href="https://PheonixHkbxoic.github.io/docs/posts/golang/index.xml">
+<link rel="alternate" hreflang="zh" href="https://PheonixHkbxoic.github.io/docs/posts/golang/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,13 +57,13 @@
 
     </style>
 </noscript><meta property="og:title" content="Golang" />
-<meta property="og:description" content="Golang知识点总结" />
+<meta property="og:description" content="PheonixHkbxoic 个人博客, hugo Papermod 主题, 读书笔记, 张昌辉个人博客" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://PheonixHkbxoic.github.io/docs/posts/golang/" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Golang"/>
-<meta name="twitter:description" content="Golang知识点总结"/>
+<meta name="twitter:description" content="PheonixHkbxoic 个人博客, hugo Papermod 主题, 读书笔记, 张昌辉个人博客"/>
 
 
 <script type="application/ld+json">
@@ -124,6 +125,12 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://PheonixHkbxoic.github.io/docs/en/" title="English"
+                            aria-label="English">English</a>
+                    </li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -171,31 +178,42 @@
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="https://PheonixHkbxoic.github.io/docs/">Home</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/docs/posts/">文章</a></div>
+<header class="page-header"><div class="breadcrumbs"><a href="https://PheonixHkbxoic.github.io/docs/">主页</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/docs/posts/">文章</a></div>
   <h1>
   </h1>
-  <div class="post-description">
-    Golang知识点总结
-  </div>
 </header>
 
 <article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://PheonixHkbxoic.github.io/docs/post/golang-001.jpeg" alt="">
+<figure class="entry-cover"><img loading="lazy" src="https://PheonixHkbxoic.github.io/docs/post/golang-string.jpeg" alt="">
 </figure>
   <header class="entry-header">
-    <h2>变量声明与赋值<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    <h2>Go: string
     </h2>
   </header>
   <div class="entry-content">
-    <p>变量声明与赋值 Go 中命名规则是，名称以字母或下划线开头，后面可跟任意数量的字符、数字和下划线，字符区分大小写，名称本身没有长度限制，但是 Go 的编...</p>
+    <p>字符串 声明与赋值 1 2 3 4 5 var a string var a string = &#34;x&#34; var a = &#34;x&#34; a := &#34;x\&#34;x&#34; a := `x&#34;x` 数据结构 1 2 3 4 type StringHeader struct { Data uintptr Len int } Data是数据的地址，Len是数据的长度 ui...</p>
   </div>
-  <footer class="entry-footer"><span title='2023-12-20 22:15:37 &#43;0000 UTC'>2023-12-20</span> &nbsp;&nbsp;2 min, PheonixHkbxoic</footer>
-  <a class="entry-link" aria-label="post link to 变量声明与赋值" href="https://PheonixHkbxoic.github.io/docs/posts/golang/variable_declaration/"></a>
+  <footer class="entry-footer"><span title='2024-01-01 00:00:00 &#43;0000 UTC'>2024-01-01</span> &nbsp;&nbsp;2 分钟, 541 字, PheonixHkbxoic</footer>
+  <a class="entry-link" aria-label="post link to Go: string" href="https://PheonixHkbxoic.github.io/docs/posts/golang/string/"></a>
+</article>
+
+<article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://PheonixHkbxoic.github.io/docs/post/golang-variable.jpeg" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>GO:变量声明与赋值
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>一、变量声明与赋值 Go 中命名规则是，名称以字母或下划线开头，后面可跟任意数量的字符、数字和下划线，字符区分大小写，名称本身没有长度限制，但是 Go...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-12-20 22:15:37 &#43;0000 UTC'>2023-12-20</span> &nbsp;&nbsp;3 分钟, 1187 字, PheonixHkbxoic</footer>
+  <a class="entry-link" aria-label="post link to GO:变量声明与赋值" href="https://PheonixHkbxoic.github.io/docs/posts/golang/variable_declaration/"></a>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://PheonixHkbxoic.github.io/docs/">PheonixHkbxoic</a></span>
+    <span>&copy; 2024 <a href="https://PheonixHkbxoic.github.io/docs/">PheonixHkbxoic</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

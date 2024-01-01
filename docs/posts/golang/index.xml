@@ -5,15 +5,24 @@
     <link>https://PheonixHkbxoic.github.io/docs/posts/golang/</link>
     <description>Recent content in Golang on PheonixHkbxoic</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh</language>
     <lastBuildDate>Wed, 20 Dec 2023 22:15:37 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/posts/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>变量声明与赋值</title>
+      <title>Go: string</title>
+      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/string/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/string/</guid>
+      <description>字符串 声明与赋值 1 2 3 4 5 var a string var a string = &amp;#34;x&amp;#34; var a = &amp;#34;x&amp;#34; a := &amp;#34;x\&amp;#34;x&amp;#34; a := `x&amp;#34;x` 数据结构 1 2 3 4 type StringHeader struct { Data uintptr Len int } Data是数据的地址，Len是数据的长度 ui</description>
+    </item>
+    
+    <item>
+      <title>GO:变量声明与赋值</title>
       <link>https://PheonixHkbxoic.github.io/docs/posts/golang/variable_declaration/</link>
       <pubDate>Wed, 20 Dec 2023 22:15:37 +0000</pubDate>
       
       <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/variable_declaration/</guid>
-      <description>Go 中命名规则是，名称以字母或下划线开头，后面可跟任意数量的字符、数字和下划线，字符区分大小写，名称本身没有长度限制，但是 Go 的编程风格倾向于使用短名称，特别是局部变量</description>
+      <description>一、变量声明与赋值 Go 中命名规则是，名称以字母或下划线开头，后面可跟任意数量的字符、数字和下划线，字符区分大小写，名称本身没有长度限制，但是 Go</description>
     </item>
     
   </channel>
