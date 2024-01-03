@@ -8,12 +8,12 @@
     <language>zh</language>
     <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/tags/string/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Go: string</title>
+      <title>Go: 字符串</title>
       <link>https://PheonixHkbxoic.github.io/docs/posts/golang/string/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/string/</guid>
-      <description>字符串 声明与赋值 1 2 3 4 5 var a string var a string = &amp;#34;x&amp;#34; var a = &amp;#34;x&amp;#34; a := &amp;#34;x\&amp;#34;x&amp;#34; a := `x&amp;#34;x` 数据结构 1 2 3 4 type StringHeader struct { Data uintptr Len int } Data是数据的地址，Len是数据的长度 ui</description>
+      <description>字符串是不可变的,字符串的赋值并不是拷贝底层的字符串数组，而是数组指针和长度字段的拷贝,重新赋值 不会改变原来变量的地址</description>
     </item>
     
   </channel>

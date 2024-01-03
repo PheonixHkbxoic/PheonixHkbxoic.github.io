@@ -1,17 +1,17 @@
 ---
-Title: "GO:变量声明与赋值"
+Title: "Go: 变量"
 Date: 2023-12-20 22:15:37
 draft: false
-description: ""
+summary: ""
 lastMod: 2024-1-1
 cover:
     hidden: false
     image: "post/golang-variable.jpeg"
-weight: 1
+weight: 30
 
 categories: [golang]
 
-tags: [变量, 声明, 赋值,常量,零值,默认值]
+tags: [golang,变量, 声明, 赋值,常量,零值,默认值]
 
 ShowToc: true           # 显示toc
 TocOpen: true           # 自动展开目录
@@ -36,7 +36,7 @@ Go 中有 25 个关键字，这些关键字不可用来命名。
 
 ### 单变量声明与赋值
 
-```golang
+```go
 // 声明 默认值为0
 var a int
 
@@ -56,7 +56,7 @@ fmt.Println(a, b, c, d)
 
 ### 多变量声明与赋值
 
-```golang
+```go
 // 多变量 声明
 var aa, bb int
 fmt.Println(aa, bb)
@@ -91,7 +91,7 @@ fmt.Println(ccc, ddd)
 
 ### 全局变量与局部变量
 
-```golang
+```go
 // 全局变量 只声明赋值 可以不使用 不会报错
 var x int
 
@@ -104,7 +104,7 @@ func main() {
 
 ### 赋值类型不同时
 
-```golang
+```go
 // 赋值类型不同时 可能会强转，不能强转则会报错
 var mi int = 5.0
 fmt.Println(mi)
@@ -118,9 +118,9 @@ mii, _ := strconv.Atoi("5.0")
 fmt.Println(mx, mii)
 ```
 
-
 ### 常量
-```golang
+
+```go
 const a = 5
 const b float32 = 5.0
 const c = "abc"
@@ -137,24 +137,25 @@ const (
 - 常量只能是基本数据类型，包括整数、浮点数、布尔值和字符串
 - 常量不允许被重复定义
 
-
 ## 二、常见类型
+
 布尔bool, 字符串string, 整数(integer)，浮点数(float)，复数(complex)  
 接口interface{}，结构体struct，数组(array)，切片(slice)，通道chan，字典map，函数func()  
 括号中的类型并不存在，只是一个统称  
-
 
 整数：byte, int(默认), int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64, rune, uintptr  
 浮点数：float32(默认), float64  
 复数：complex64, complex128  
 
 注: 
+
 - byte=uint8, rune=int32, 而int、uint、uintptr的大小是不确定的，取决取系统，可能为32或64位
 - uintptr只是一个无符号整形，一般是地址值，不是指针，不参与gc，需要通过uintptr(unsafe.Pointer(指针变量))强转得到
 - unsafe.Pointer指针对象，参与gc，可通过unsafe.Pointer(指针变量)得到
 - any任意类型，即interface{}接口
 
 ## 三、零值，默认值
+
 1. bool: false
 2. string: ""
 3. 整数：0

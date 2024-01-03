@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>遍历 on PheonixHkbxoic</title>
+    <link>https://PheonixHkbxoic.github.io/docs/tags/%E9%81%8D%E5%8E%86/</link>
+    <description>Recent content in 遍历 on PheonixHkbxoic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 02 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/tags/%E9%81%8D%E5%8E%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go: range迭代</title>
+      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/range/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/range/</guid>
+      <description>迭代数组、切片、映射、字符串和通道,i,v是值传递，修改v数组元素不变， 数组与切片循环前次数已确定，遍历通道直到关闭, 没有数据则会阻塞</description>
+    </item>
+    
+  </channel>
+</rss>

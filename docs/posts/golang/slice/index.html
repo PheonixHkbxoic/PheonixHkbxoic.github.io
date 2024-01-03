@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Go: 切片 | PheonixHkbxoic</title>
+<meta name="keywords" content="golang, slice, 切片, list">
+<meta name="description" content="切片是不定长的特定元素类型的序列,可以理解为动态数组,切片本身不能存储任何数据，都是底层数组存储数据，修改切片的时候修改的是底层数组中的数据,底层实现是一个结构体，包括长度、容量和一个指向实际数组的unsafe.Pointer指针">
+<meta name="author" content="PheonixHkbxoic">
+<link rel="canonical" href="https://PheonixHkbxoic.github.io/docs/posts/golang/slice/">
+<link crossorigin="anonymous" href="/docs/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/docs/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://PheonixHkbxoic.github.io/docs/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://PheonixHkbxoic.github.io/docs/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://PheonixHkbxoic.github.io/docs/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://PheonixHkbxoic.github.io/docs/apple-touch-icon.png">
+<link rel="mask-icon" href="https://PheonixHkbxoic.github.io/docs/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/slice/">
+<link rel="alternate" hreflang="zh" href="https://PheonixHkbxoic.github.io/docs/posts/golang/slice/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Go: 切片" />
+<meta property="og:description" content="切片是不定长的特定元素类型的序列,可以理解为动态数组,切片本身不能存储任何数据，都是底层数组存储数据，修改切片的时候修改的是底层数组中的数据,底层实现是一个结构体，包括长度、容量和一个指向实际数组的unsafe.Pointer指针" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://PheonixHkbxoic.github.io/docs/posts/golang/slice/" />
+<meta property="og:image" content="https://PheonixHkbxoic.github.io/docs/post/golang-slice.jpeg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-03T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://PheonixHkbxoic.github.io/docs/post/golang-slice.jpeg" />
+<meta name="twitter:title" content="Go: 切片"/>
+<meta name="twitter:description" content="切片是不定长的特定元素类型的序列,可以理解为动态数组,切片本身不能存储任何数据，都是底层数组存储数据，修改切片的时候修改的是底层数组中的数据,底层实现是一个结构体，包括长度、容量和一个指向实际数组的unsafe.Pointer指针"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章",
+      "item": "https://PheonixHkbxoic.github.io/docs/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Golang",
+      "item": "https://PheonixHkbxoic.github.io/docs/posts/golang/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Go: 切片",
+      "item": "https://PheonixHkbxoic.github.io/docs/posts/golang/slice/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Go: 切片",
+  "name": "Go: 切片",
+  "description": "切片是不定长的特定元素类型的序列,可以理解为动态数组,切片本身不能存储任何数据，都是底层数组存储数据，修改切片的时候修改的是底层数组中的数据,底层实现是一个结构体，包括长度、容量和一个指向实际数组的unsafe.Pointer指针",
+  "keywords": [
+    "golang", "slice", "切片", "list"
+  ],
+  "articleBody": "slice 切片是不定长的特定元素类型的序列,可以理解为动态数组\nGo语言中，数组在传递的时候，传递的是原数组的拷贝，对大数组来说，内存代价会非常大，影响性能。\n传递数组指针可以解决这个问题，但是数组指针也有一个弊端：原数组的指针指向改变了，那函数里面的指针指向也会跟着改变，某些情况下，可能会产生意想不到的bug。slice的出现，便是为了解决这个问题。\n一、特点 长度不固定 切片是引用类型，一般来说是浅拷贝 切片本身不能存储任何数据，都是底层数组存储数据，修改切片的时候修改的是底层数组中的数据，切片一旦扩容，会指向一个新的底层数组，内存地址也就随之改变。 底层实现是一个结构体，包括长度、容量和一个指向实际数组的unsafe.Pointer指针 1 2 3 4 5 type slice struct { array unsafe.Pointer // 指向底层数组的指针 len int // 长度 cap int // 容量 } 注意：\n底层数组是可以被多个 slice 同时指向的，因此对一个 slice 的元素进行操作是有可能影响到其他 slice 的。\n二、扩容规则 如果扩容需求大于当前容量的两倍，扩容后的容量为所需的最小容量 当前切片长度\u003c1024,扩容当前容量为2倍， 当前切片长度\u003e1024,每次扩容当前容量的1.25倍，循环扩容直至容量满足需求\n切片扩容之后，指向匿名数组的指针地址会发生变化。 1.18 引入了新的扩容规则，首先 1024 的边界不复存在，取而代之的常量是 256 。超出256的情况，也不是直接扩容25%，而是设计了一个平滑过渡的计算方法，随着容量增大，扩容比例逐渐从100%平滑降低到25%，从 2 倍平滑过渡到 1.25 倍。\n为什么要这样设计？\n避免追加过程中频繁扩容，减少内存分配和数据复制开销，有助于性能提升。\n计算出了新容量之后，还没有完，出于内存的高效利用考虑，还要进行内存对齐。进行内存对齐之后，新 slice 的容量是要 大于等于 老 slice 容量的 2倍或者1.25倍。\n三、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 只声明 var a = []string // 声明，使用字面量初始化 var b = []string{\"a\", \"b\", \"c\"} // 从已有数组或切片生成 var c = b[1:] // 使用make生成 可以指定长度，容量 var d = make([]string, 3) var d = make([]string, 3, 8) // new方式创建的是指针 var e *[]int = new([]int) 注意：\n只声明的切片 等于nil，长度与容量都为0 make([]string, 0, 0)赋值的切片，长度与容量都为0，但不是nil make会用零值0初始化所有元素, cap可心省略(默认等于长度) 四、切片slice和数组array的关系 切片slice的底层是对数组array的引用；\n切片可以引用数组的部分元素或者全部元素；\n切片slice的指针指向的是切片的第一个元素的内存地址，也就是该元素对应的数组的元素的内存地址。\n五、切片操作 len,cap 可以查看切片的长度与容量\nappend s = append(s, “x”)\ns作为参数传给函数append是值传递，是结构体的拷贝，底层数组的指针一样\n底层数组加了一个元素，s拷贝的长度也会跟着变，但s的长度没变啊，所以s要重新赋值\n另外如果扩容了s拷贝的底层数组指针会变, 长度，容量也会变，但原来的s什么都不会变，所以s也要重新赋值\n值的过程复制一个新的切片，这个切片也指向原始变量的底层数组。\n函数中无论是直接修改切片，还是append创建新的切片，都是基于共享切片底层数组的情况作为基础，\n最外面的原始切片是否改变，取决于函数内的操作和切片本身容量，是否修改了底层数组。\n如果要修改切片的值，那么一定对底层数组做了修改，为影响到函数外的切片 如果是append操作，则要看切片是否扩容 切片没有进行扩容，那么会直接添加或修改切片指向底层数组中后一位的值，故底层数组会受到改变，函数外切片改变； 而如果进行扩容，则会导致切片指向一个新的底层数组，一切修改都对函数外的原切片无影响 访问 切片的引用方式是[ start, end )半闭区间的模式，即索引start可以引用到，而end是不能引用到的\nstart可以没有，默认为0；end可以没有默认cap\n删除\n1 2 3 4 5 6 7 8 9 10 s := []int{0, 1, 2, 3, 4, 5} // 删除go切片首尾元素的方法 s = s[1:] //利用切片引用并重新赋值的方法，删除掉首尾元素，如果想删除两个，可以用s=s[2:] fmt.Println(s) //[1,2,3,4,5] s = s[0:(len(s) - 1)] //删除末尾的元素 fmt.Println(s) //[1,2,3,4] // 接下来，我们利用append()方法来删除切片中间位置的元素 s = append(s[:1], s[2:]...) fmt.Println(s) //[1,3,4] 复制\n切片共用底层数组，修改的话有可能影响原来的切片，如果我们不想这样，可以使用copy\n1 2 3 4 5 6 7 8 9 s0 := []int{1, 0, 3, 2, 6, 5} s1 := make([]int, len(s0)) s2 := s0 copy(s1, s0) fmt.Printf(\"s0的内存地址为%p，s1的内存地址为%p，s2的内存地址为%p \\n\", \u0026s0, \u0026s1, \u0026s2) s1[0] = 100 fmt.Printf(\"s1元素修改后，s1的值为%v, s0的值为%v \\n\", s1, s0) s0[0] = 99 fmt.Printf(\"s0元素修改后，s0的值为%v，s2的值为%v，s1的值为%v \\n\", s0, s2, s1) s0,s2相互影响，而s1则跟s0,s2没有关系\n",
+  "wordCount" : "1912",
+  "inLanguage": "zh",
+  "image":"https://PheonixHkbxoic.github.io/docs/post/golang-slice.jpeg","datePublished": "2024-01-03T00:00:00Z",
+  "dateModified": "2024-01-03T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "PheonixHkbxoic"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://PheonixHkbxoic.github.io/docs/posts/golang/slice/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PheonixHkbxoic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://PheonixHkbxoic.github.io/docs/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://PheonixHkbxoic.github.io/docs/" accesskey="h" title="PheonixHkbxoic (Alt + H)">PheonixHkbxoic</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://PheonixHkbxoic.github.io/docs/en/" title="English"
+                            aria-label="English">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/" title="PheonixHkbxoic">
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/posts/golang/" title="Golang">
+                    <span>Go</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/posts/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/tags/" title="Tags">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/categories/" title="Categories">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/archives/" title="归档">
+                    <span>时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/about/" title="关于">
+                    <span>‍关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://PheonixHkbxoic.github.io/docs/">主页</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/docs/posts/">文章</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/docs/posts/golang/">Golang</a></div>
+    <h1 class="post-title">
+      Go: 切片
+    </h1>
+    <div class="post-meta"><span title='2024-01-03 00:00:00 &#43;0000 UTC'>2024-01-03</span> &nbsp;&nbsp;4 分钟, 1912 字, PheonixHkbxoic&nbsp;|&nbsp;语言:
+<ul class="i18n_list">
+    <li>
+        <a href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/slice/">English</a>
+    </li>
+</ul>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#slice" aria-label="slice">slice</a><ul>
+                        
+                <li>
+                    <a href="#%e4%b8%80%e7%89%b9%e7%82%b9" aria-label="一、特点">一、特点</a></li>
+                <li>
+                    <a href="#%e4%ba%8c%e6%89%a9%e5%ae%b9%e8%a7%84%e5%88%99" aria-label="二、扩容规则">二、扩容规则</a></li>
+                <li>
+                    <a href="#%e4%b8%89%e5%a3%b0%e6%98%8e%e4%b8%8e%e8%b5%8b%e5%80%bc" aria-label="三、声明与赋值">三、声明与赋值</a></li>
+                <li>
+                    <a href="#%e5%9b%9b%e5%88%87%e7%89%87slice%e5%92%8c%e6%95%b0%e7%bb%84array%e7%9a%84%e5%85%b3%e7%b3%bb" aria-label="四、切片slice和数组array的关系">四、切片slice和数组array的关系</a></li>
+                <li>
+                    <a href="#%e4%ba%94%e5%88%87%e7%89%87%e6%93%8d%e4%bd%9c" aria-label="五、切片操作">五、切片操作</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="slice">slice<a hidden class="anchor" aria-hidden="true" href="#slice">#</a></h2>
+<p>切片是不定长的特定元素类型的序列,可以理解为动态数组</p>
+<p>Go语言中，数组在传递的时候，传递的是原数组的拷贝，对大数组来说，内存代价会非常大，影响性能。</p>
+<p>传递数组指针可以解决这个问题，但是数组指针也有一个弊端：原数组的指针指向改变了，那函数里面的指针指向也会跟着改变，某些情况下，可能会产生意想不到的bug。slice的出现，便是为了解决这个问题。</p>
+<h3 id="一特点">一、特点<a hidden class="anchor" aria-hidden="true" href="#一特点">#</a></h3>
+<ul>
+<li>长度不固定</li>
+<li>切片是引用类型，一般来说是浅拷贝</li>
+<li>切片本身不能存储任何数据，都是底层数组存储数据，修改切片的时候修改的是底层数组中的数据，切片一旦扩容，会指向一个新的底层数组，内存地址也就随之改变。</li>
+<li>底层实现是一个结构体，包括长度、容量和一个指向实际数组的unsafe.Pointer指针</li>
+</ul>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">type</span> slice <span style="color:#fff;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>    array unsafe.Pointer <span style="color:#007f7f">// 指向底层数组的指针
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>    len   <span style="color:#fff;font-weight:bold">int</span> <span style="color:#007f7f">// 长度 
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>    cap   <span style="color:#fff;font-weight:bold">int</span> <span style="color:#007f7f">// 容量
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意：</p>
+<p>底层数组是可以被多个 slice 同时指向的，因此对一个 slice 的元素进行操作是有可能影响到其他 slice 的。</p>
+<h3 id="二扩容规则">二、扩容规则<a hidden class="anchor" aria-hidden="true" href="#二扩容规则">#</a></h3>
+<ul>
+<li>如果扩容需求大于当前容量的两倍，扩容后的容量为所需的最小容量</li>
+<li>当前切片长度&lt;1024,扩容当前容量为2倍，</li>
+<li>当前切片长度&gt;1024,每次扩容当前容量的1.25倍，循环扩容直至容量满足需求<br>
+切片扩容之后，指向匿名数组的指针地址会发生变化。</li>
+</ul>
+<p>1.18 引入了新的扩容规则，首先 1024 的边界不复存在，取而代之的常量是 256 。超出256的情况，也不是直接扩容25%，而是设计了一个平滑过渡的计算方法，随着容量增大，扩容比例逐渐从100%平滑降低到25%，从 2 倍平滑过渡到 1.25 倍。</p>
+<p>为什么要这样设计？</p>
+<p>  避免追加过程中频繁扩容，减少内存分配和数据复制开销，有助于性能提升。</p>
+<p>计算出了新容量之后，还没有完，出于内存的高效利用考虑，还要进行内存对齐。进行内存对齐之后，新 slice 的容量是要 大于等于 老 slice 容量的 2倍或者1.25倍。</p>
+<h3 id="三声明与赋值">三、声明与赋值<a hidden class="anchor" aria-hidden="true" href="#三声明与赋值">#</a></h3>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#007f7f">//  只声明
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">var</span> a = []<span style="color:#fff;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#007f7f">// 声明，使用字面量初始化
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">var</span> b = []<span style="color:#fff;font-weight:bold">string</span>{<span style="color:#0ff;font-weight:bold">&#34;a&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;b&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;c&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007f7f">// 从已有数组或切片生成
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">var</span> c = b[<span style="color:#ff0;font-weight:bold">1</span>:]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007f7f">// 使用make生成 可以指定长度，容量
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">var</span> d = <span style="color:#fff;font-weight:bold">make</span>([]<span style="color:#fff;font-weight:bold">string</span>, <span style="color:#ff0;font-weight:bold">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">var</span> d = <span style="color:#fff;font-weight:bold">make</span>([]<span style="color:#fff;font-weight:bold">string</span>, <span style="color:#ff0;font-weight:bold">3</span>, <span style="color:#ff0;font-weight:bold">8</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007f7f">// new方式创建的是指针
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">var</span> e *[]<span style="color:#fff;font-weight:bold">int</span> = <span style="color:#fff;font-weight:bold">new</span>([]<span style="color:#fff;font-weight:bold">int</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意：</p>
+<ol>
+<li>只声明的切片 等于nil，长度与容量都为0</li>
+<li>make([]string, 0, 0)赋值的切片，长度与容量都为0，但不是nil</li>
+<li>make会用零值0初始化所有元素, cap可心省略(默认等于长度)</li>
+</ol>
+<h3 id="四切片slice和数组array的关系">四、切片slice和数组array的关系<a hidden class="anchor" aria-hidden="true" href="#四切片slice和数组array的关系">#</a></h3>
+<ul>
+<li>
+<p>切片slice的底层是对数组array的引用；</p>
+</li>
+<li>
+<p>切片可以引用数组的部分元素或者全部元素；</p>
+</li>
+<li>
+<p>切片slice的指针指向的是切片的第一个元素的内存地址，也就是该元素对应的数组的元素的内存地址。</p>
+</li>
+</ul>
+<h3 id="五切片操作">五、切片操作<a hidden class="anchor" aria-hidden="true" href="#五切片操作">#</a></h3>
+<ol>
+<li>len,cap</li>
+</ol>
+<p>可以查看切片的长度与容量</p>
+<ol start="2">
+<li>append</li>
+</ol>
+<blockquote>
+<p>s = append(s, “x”)</p>
+</blockquote>
+<p>s作为参数传给函数append是值传递，是结构体的拷贝，底层数组的指针一样</p>
+<p>底层数组加了一个元素，s拷贝的长度也会跟着变，但s的长度没变啊，所以s要重新赋值</p>
+<p>另外如果扩容了s拷贝的底层数组指针会变, 长度，容量也会变，但原来的s什么都不会变，所以s也要重新赋值</p>
+<p>值的过程复制一个新的切片，这个切片也指向原始变量的底层数组。</p>
+<p>函数中无论是直接修改切片，还是append创建新的切片，都是基于共享切片底层数组的情况作为基础，</p>
+<p>最外面的原始切片是否改变，取决于函数内的操作和切片本身容量，是否修改了底层数组。</p>
+<ul>
+<li>如果要修改切片的值，那么一定对底层数组做了修改，为影响到函数外的切片</li>
+<li>如果是append操作，则要看切片是否扩容
+<ul>
+<li>切片没有进行扩容，那么会直接添加或修改切片指向底层数组中后一位的值，故底层数组会受到改变，函数外切片改变；</li>
+<li>而如果进行扩容，则会导致切片指向一个新的底层数组，一切修改都对函数外的原切片无影响</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>访问</li>
+</ol>
+<p>切片的引用方式是[ start, end )半闭区间的模式，即索引start可以引用到，而<strong>end是不能引用到的</strong></p>
+<p>start可以没有，默认为0；end可以没有默认<strong>cap</strong></p>
+<ol start="4">
+<li>
+<p>删除</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>s := []<span style="color:#fff;font-weight:bold">int</span>{<span style="color:#ff0;font-weight:bold">0</span>, <span style="color:#ff0;font-weight:bold">1</span>, <span style="color:#ff0;font-weight:bold">2</span>, <span style="color:#ff0;font-weight:bold">3</span>, <span style="color:#ff0;font-weight:bold">4</span>, <span style="color:#ff0;font-weight:bold">5</span>}
+</span></span><span style="display:flex;"><span><span style="color:#007f7f">// 删除go切片首尾元素的方法
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>s = s[<span style="color:#ff0;font-weight:bold">1</span>:]             <span style="color:#007f7f">//利用切片引用并重新赋值的方法，删除掉首尾元素，如果想删除两个，可以用s=s[2:]
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>fmt.Println(s)        <span style="color:#007f7f">//[1,2,3,4,5]
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>s = s[<span style="color:#ff0;font-weight:bold">0</span>:(<span style="color:#fff;font-weight:bold">len</span>(s) - <span style="color:#ff0;font-weight:bold">1</span>)] <span style="color:#007f7f">//删除末尾的元素
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>fmt.Println(s)        <span style="color:#007f7f">//[1,2,3,4]
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007f7f">// 接下来，我们利用append()方法来删除切片中间位置的元素
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>s = <span style="color:#fff;font-weight:bold">append</span>(s[:<span style="color:#ff0;font-weight:bold">1</span>], s[<span style="color:#ff0;font-weight:bold">2</span>:]...)
+</span></span><span style="display:flex;"><span>fmt.Println(s) <span style="color:#007f7f">//[1,3,4]
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>复制</p>
+<p>切片共用底层数组，修改的话有可能影响原来的切片，如果我们不想这样，可以使用copy</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>s0 := []<span style="color:#fff;font-weight:bold">int</span>{<span style="color:#ff0;font-weight:bold">1</span>, <span style="color:#ff0;font-weight:bold">0</span>, <span style="color:#ff0;font-weight:bold">3</span>, <span style="color:#ff0;font-weight:bold">2</span>, <span style="color:#ff0;font-weight:bold">6</span>, <span style="color:#ff0;font-weight:bold">5</span>}
+</span></span><span style="display:flex;"><span>s1 := <span style="color:#fff;font-weight:bold">make</span>([]<span style="color:#fff;font-weight:bold">int</span>, <span style="color:#fff;font-weight:bold">len</span>(s0))
+</span></span><span style="display:flex;"><span>s2 := s0
+</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">copy</span>(s1, s0)
+</span></span><span style="display:flex;"><span>fmt.Printf(<span style="color:#0ff;font-weight:bold">&#34;s0的内存地址为%p，s1的内存地址为%p，s2的内存地址为%p \n&#34;</span>, &amp;s0, &amp;s1, &amp;s2)
+</span></span><span style="display:flex;"><span>s1[<span style="color:#ff0;font-weight:bold">0</span>] = <span style="color:#ff0;font-weight:bold">100</span>
+</span></span><span style="display:flex;"><span>fmt.Printf(<span style="color:#0ff;font-weight:bold">&#34;s1元素修改后，s1的值为%v, s0的值为%v \n&#34;</span>, s1, s0)
+</span></span><span style="display:flex;"><span>s0[<span style="color:#ff0;font-weight:bold">0</span>] = <span style="color:#ff0;font-weight:bold">99</span>
+</span></span><span style="display:flex;"><span>fmt.Printf(<span style="color:#0ff;font-weight:bold">&#34;s0元素修改后，s0的值为%v，s2的值为%v，s1的值为%v \n&#34;</span>, s0, s2, s1)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>s0,s2相互影响，而s1则跟s0,s2没有关系</p>
+</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://PheonixHkbxoic.github.io/docs/tags/golang/">golang</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/docs/tags/slice/">slice</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/docs/tags/%E5%88%87%E7%89%87/">切片</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/docs/tags/list/">list</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://PheonixHkbxoic.github.io/docs/posts/golang/array/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>Go: 数组</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://PheonixHkbxoic.github.io/docs/">PheonixHkbxoic</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制!';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
