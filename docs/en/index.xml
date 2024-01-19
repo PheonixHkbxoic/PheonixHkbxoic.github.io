@@ -5,7 +5,7 @@
     <link>https://PheonixHkbxoic.github.io/docs/en/</link>
     <description>Recent content on PheonixHkbxoic | docs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>en</language>
     <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go: Array</title>
@@ -69,6 +69,26 @@
       <guid>https://PheonixHkbxoic.github.io/docs/en/posts/golang/variable/</guid>
       <description>一、变量声明与赋值 Go 中命名规则是，名称以字母或下划线开头，后面可跟任意数量的字符、数字和下划线，字符区分大小写，名称本身没有长度限制，但是 Go</description>
     </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://PheonixHkbxoic.github.io/docs/en/about/</link>
+      <pubDate>Wed, 20 Dec 2023 14:46:08 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/en/about/</guid>
+      <description>关于我 A javaer, gopher coding and coding</description>
+    </item>
+    
+    
+    <item>
+      <title>Links</title>
+      <link>https://PheonixHkbxoic.github.io/docs/en/links/</link>
+      <pubDate>Wed, 20 Dec 2023 14:46:08 +0800</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/en/links/</guid>
+      <description>友情链接 Hugo</description>
+    </item>
+    
     
   </channel>
 </rss>

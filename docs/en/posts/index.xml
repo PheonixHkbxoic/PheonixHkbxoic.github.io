@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on PheonixHkbxoic | docs</title>
+    <title>Article on PheonixHkbxoic | docs</title>
     <link>https://PheonixHkbxoic.github.io/docs/en/posts/</link>
-    <description>Recent content in Posts on PheonixHkbxoic | docs</description>
+    <description>Recent content in Article on PheonixHkbxoic | docs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 20 Dec 2023 22:15:37 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/en/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go: Array</title>
       <link>https://PheonixHkbxoic.github.io/docs/en/posts/golang/array/</link>

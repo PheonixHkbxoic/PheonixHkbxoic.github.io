@@ -1,5 +1,5 @@
 ---
-title: "Links"
+title: "链接"
 date: 2023-12-20T14:46:08+08:00
 draft: true
 hideTitle: true

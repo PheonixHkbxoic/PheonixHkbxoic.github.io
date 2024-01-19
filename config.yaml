@@ -71,7 +71,7 @@ languages:
           pageRef: about
           weight: 50
   en:
-    languageCode: "en-US"
+    languageCode: "en"
     languageName: "English"
     menu:
       main:

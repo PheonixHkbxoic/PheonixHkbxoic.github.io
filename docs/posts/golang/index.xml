@@ -35,7 +35,7 @@
     </item>
     
     <item>
-      <title>Go: range迭代</title>
+      <title>Go: 迭代</title>
       <link>https://PheonixHkbxoic.github.io/docs/posts/golang/range/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
       
@@ -44,7 +44,7 @@
     </item>
     
     <item>
-      <title>Go: Channel</title>
+      <title>Go: 通道</title>
       <link>https://PheonixHkbxoic.github.io/docs/posts/golang/channel/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
       

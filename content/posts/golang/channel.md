@@ -1,5 +1,5 @@
 ---
-title: "Go: Channel"
+title: "Go: 通道"
 date: 2024-01-01
 draft: false
 
