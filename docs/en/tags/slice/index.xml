@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>slice on PheonixHkbxoic</title>
+    <title>slice on PheonixHkbxoic | docs</title>
     <link>https://PheonixHkbxoic.github.io/docs/en/tags/slice/</link>
-    <description>Recent content in slice on PheonixHkbxoic</description>
+    <description>Recent content in slice on PheonixHkbxoic | docs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-US</language>
     <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/en/tags/slice/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go: Slice</title>

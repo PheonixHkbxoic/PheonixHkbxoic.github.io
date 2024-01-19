@@ -10,7 +10,7 @@ summary: "数组是内存中一片连续的区域，固定长度，元素类型�
 编译时进行类型检查 ，索引越界检查"
 lastMod: 2024-01-03
 cover:
-    hidden: true
+    hidden: false
     image: "post/golang-array.jpeg"
 weight: 30
 categories: [golang]

@@ -10,7 +10,7 @@ summary: "迭代数组、切片、映射、字符串和通道,i,v是值传递，
 数组与切片循环前次数已确定，遍历通道直到关闭, 没有数据则会阻塞"
 lastMod: 2024-01-02
 cover:
-    hidden: true
+    hidden: false
     image: "post/golang-range.jpeg"
 weight: 30
 categories: [golang]

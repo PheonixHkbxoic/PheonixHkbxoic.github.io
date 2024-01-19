@@ -6,25 +6,25 @@
     <lastmod>2024-01-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/posts/golang/array/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/array/"
                 />
   </url><url>
     <loc>https://PheonixHkbxoic.github.io/docs/en/posts/golang/map/</loc>
-    <lastmod>2024-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/posts/golang/map/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/map/"
                 />
   </url><url>
@@ -32,12 +32,12 @@
     <lastmod>2024-01-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/posts/golang/slice/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/slice/"
                 />
   </url><url>
@@ -45,25 +45,38 @@
     <lastmod>2024-01-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/posts/golang/range/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/range/"
+                />
+  </url><url>
+    <loc>https://PheonixHkbxoic.github.io/docs/en/posts/golang/channel/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://PheonixHkbxoic.github.io/docs/posts/golang/channel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/channel/"
                 />
   </url><url>
     <loc>https://PheonixHkbxoic.github.io/docs/en/posts/golang/string/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/posts/golang/string/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/string/"
                 />
   </url><url>
@@ -71,12 +84,12 @@
     <lastmod>2023-12-20T22:15:37+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/posts/golang/variable/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/variable/"
                 />
   </url><url>
@@ -84,64 +97,64 @@
     <lastmod>2024-01-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/array/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/array/"
                 />
   </url><url>
     <loc>https://PheonixHkbxoic.github.io/docs/en/categories/</loc>
-    <lastmod>2024-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/categories/"
                 />
   </url><url>
     <loc>https://PheonixHkbxoic.github.io/docs/en/tags/golang/</loc>
-    <lastmod>2024-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/golang/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/golang/"
                 />
   </url><url>
     <loc>https://PheonixHkbxoic.github.io/docs/en/categories/golang/</loc>
-    <lastmod>2024-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/categories/golang/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/categories/golang/"
                 />
   </url><url>
     <loc>https://PheonixHkbxoic.github.io/docs/en/tags/kv/</loc>
-    <lastmod>2024-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/kv/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/kv/"
                 />
   </url><url>
@@ -149,51 +162,51 @@
     <lastmod>2024-01-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/list/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/list/"
                 />
   </url><url>
     <loc>https://PheonixHkbxoic.github.io/docs/en/tags/map/</loc>
-    <lastmod>2024-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/map/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/map/"
                 />
   </url><url>
     <loc>https://PheonixHkbxoic.github.io/docs/en/</loc>
-    <lastmod>2024-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/"
                 />
   </url><url>
     <loc>https://PheonixHkbxoic.github.io/docs/en/posts/</loc>
-    <lastmod>2024-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/posts/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/posts/"
                 />
   </url><url>
@@ -201,25 +214,25 @@
     <lastmod>2024-01-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/slice/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/slice/"
                 />
   </url><url>
     <loc>https://PheonixHkbxoic.github.io/docs/en/tags/</loc>
-    <lastmod>2024-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/"
                 />
   </url><url>
@@ -227,25 +240,51 @@
     <lastmod>2024-01-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/range/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/range/"
+                />
+  </url><url>
+    <loc>https://PheonixHkbxoic.github.io/docs/en/tags/chan/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://PheonixHkbxoic.github.io/docs/tags/chan/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://PheonixHkbxoic.github.io/docs/en/tags/chan/"
+                />
+  </url><url>
+    <loc>https://PheonixHkbxoic.github.io/docs/en/tags/channel/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://PheonixHkbxoic.github.io/docs/tags/channel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://PheonixHkbxoic.github.io/docs/en/tags/channel/"
                 />
   </url><url>
     <loc>https://PheonixHkbxoic.github.io/docs/en/tags/string/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/string/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/string/"
                 />
   </url><url>
@@ -253,12 +292,12 @@
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"
                 />
   </url><url>
@@ -266,12 +305,12 @@
     <lastmod>2023-12-20T22:15:37+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/%E5%8F%98%E9%87%8F/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/%E5%8F%98%E9%87%8F/"
                 />
   </url><url>
@@ -279,12 +318,12 @@
     <lastmod>2023-12-20T22:15:37+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/%E5%A3%B0%E6%98%8E/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/%E5%A3%B0%E6%98%8E/"
                 />
   </url><url>
@@ -292,12 +331,12 @@
     <lastmod>2023-12-20T22:15:37+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/%E5%B8%B8%E9%87%8F/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/%E5%B8%B8%E9%87%8F/"
                 />
   </url><url>
@@ -305,12 +344,12 @@
     <lastmod>2023-12-20T22:15:37+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/%E8%B5%8B%E5%80%BC/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/%E8%B5%8B%E5%80%BC/"
                 />
   </url><url>
@@ -318,12 +357,12 @@
     <lastmod>2023-12-20T22:15:37+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/%E9%9B%B6%E5%80%BC/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/%E9%9B%B6%E5%80%BC/"
                 />
   </url><url>
@@ -331,12 +370,12 @@
     <lastmod>2023-12-20T22:15:37+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
+                hreflang="zh-CN"
                 href="https://PheonixHkbxoic.github.io/docs/tags/%E9%BB%98%E8%AE%A4%E5%80%BC/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://PheonixHkbxoic.github.io/docs/en/tags/%E9%BB%98%E8%AE%A4%E5%80%BC/"
                 />
   </url>

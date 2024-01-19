@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>golang on PheonixHkbxoic</title>
+    <title>golang on PheonixHkbxoic | docs</title>
     <link>https://PheonixHkbxoic.github.io/docs/tags/golang/</link>
-    <description>Recent content in golang on PheonixHkbxoic</description>
+    <description>Recent content in golang on PheonixHkbxoic | docs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 04 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go: 字典</title>
+      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/map/</link>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/map/</guid>
+      <description>字典 一、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 // 声明 指明key，value的类型 var a map[string]string // 赋值 a = map[string]string{} // 声明并赋值 var b map[string]string = map[string]string{} var c = map[string]string{ &amp;#34;a&amp;#34; : &amp;#34;a&amp;#34;, &amp;#34;b&amp;#34; :</description>
+    </item>
+    
     <item>
       <title>Go: 切片</title>
       <link>https://PheonixHkbxoic.github.io/docs/posts/golang/slice/</link>
@@ -14,15 +23,6 @@
       
       <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/slice/</guid>
       <description>切片是不定长的特定元素类型的序列,可以理解为动态数组,切片本身不能存储任何数据，都是底层数组存储数据，修改切片的时候修改的是底层数组中的数据,底层实现是一个结构体，包括长度、容量和一个指向实际数组的unsafe.Pointer指针</description>
-    </item>
-    
-    <item>
-      <title>Go: 字典</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/map/</link>
-      <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/map/</guid>
-      <description>字典</description>
     </item>
     
     <item>

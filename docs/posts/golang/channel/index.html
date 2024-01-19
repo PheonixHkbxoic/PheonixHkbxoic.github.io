@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Go: Channel | PheonixHkbxoic | docs</title>
+<meta name="keywords" content="通道, channel, chan">
+<meta name="description" content="通道 在Go语言中，channel是一种特殊的类型，用于在并发编程中实现不同的goroutine之间的通信和同步。本文将深入探讨golang的">
+<meta name="author" content="PheonixHkbxoic">
+<link rel="canonical" href="https://PheonixHkbxoic.github.io/docs/posts/golang/channel/">
+<link crossorigin="anonymous" href="/docs/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/docs/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://PheonixHkbxoic.github.io/docs/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://PheonixHkbxoic.github.io/docs/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://PheonixHkbxoic.github.io/docs/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://PheonixHkbxoic.github.io/docs/apple-touch-icon.png">
+<link rel="mask-icon" href="https://PheonixHkbxoic.github.io/docs/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/channel/">
+<link rel="alternate" hreflang="zh" href="https://PheonixHkbxoic.github.io/docs/posts/golang/channel/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Go: Channel" />
+<meta property="og:description" content="通道 在Go语言中，channel是一种特殊的类型，用于在并发编程中实现不同的goroutine之间的通信和同步。本文将深入探讨golang的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://PheonixHkbxoic.github.io/docs/posts/golang/channel/" />
+<meta property="og:image" content="https://PheonixHkbxoic.github.io/docs/post/golang-channel.jpeg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-01T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://PheonixHkbxoic.github.io/docs/post/golang-channel.jpeg" />
+<meta name="twitter:title" content="Go: Channel"/>
+<meta name="twitter:description" content="通道 在Go语言中，channel是一种特殊的类型，用于在并发编程中实现不同的goroutine之间的通信和同步。本文将深入探讨golang的"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章",
+      "item": "https://PheonixHkbxoic.github.io/docs/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Golang",
+      "item": "https://PheonixHkbxoic.github.io/docs/posts/golang/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Go: Channel",
+      "item": "https://PheonixHkbxoic.github.io/docs/posts/golang/channel/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Go: Channel",
+  "name": "Go: Channel",
+  "description": "通道 在Go语言中，channel是一种特殊的类型，用于在并发编程中实现不同的goroutine之间的通信和同步。本文将深入探讨golang的",
+  "keywords": [
+    "通道", "channel", "chan"
+  ],
+  "articleBody": "通道 在Go语言中，channel是一种特殊的类型，用于在并发编程中实现不同的goroutine之间的通信和同步。本文将深入探讨golang的channel是如何工作的，并介绍如何使用channel来提高程序的性能和可靠性。\n一、什么是Channel 在Go语言中，使用goroutine单纯地将函数并发执行是没有意义的。函数与函数间需要交换数据才能体现并发执行函数的意义。\n虽然可以使用共享内存进行数据交换，但是共享内存在不同的goroutine中容易发生竞态问题。为了保证数据交换的正确性，必须使用互斥量对内存进行加锁，这种做法势必造成性能问题。\nGo语言的并发模型是CSP（Communicating Sequential Processes），提倡通过通信共享内存而不是通过共享内存而实现通信。\n如果说goroutine是Go程序并发的执行体，channel就是它们之间的连接。channel是可以让一个goroutine发送特定值到另一个goroutine的通信机制。\nChannel是Go中的一个核心类型，你可以把它看成一个管道，通过它并发核心单元就可以发送或者接收数据进行通讯(communication)。\nChannel提供了一种同步的机制，确保在数据发送和接收之间的正确顺序和时机。通过使用channel，我们可以避免在多个goroutine之间共享数据时出现的竞争条件和其他并发问题。\nGo 语言中的通道（channel）是一种特殊的类型。通道像一个传送带或者队列，总是遵循先入先出（First In First Out）的规则，保证收发数据的顺序。每一个通道都是一个具体类型的导管，也就是声明channel的时候需要为其指定元素类型。\nChannel的操作符是箭头 \u003c- (箭头的指向就是数据的流向)。\n二、声明与赋值 1 2 3 4 // var 变量 chan 元素类型 var ch chan string // make(chan 元素类型, [容量]) c := make(chan string, 10) 只声明的chan零值为nil，无论发送与接收都会阻塞 需要使用make创建并赋值，容量可不写或为0 表示无缓冲 无缓冲通道必须至少有一个接收方才能发送成功，同理至少有一个发送放才能接收成功 chan有三种操作 ch \u003c- “abc” 表示发送 \u003c- ch 表示接收 close(ch) 表示关闭 chan有方向，一般用在函数参数声明时，对通道操作进行限制 c chan \u003c- string表示通道c只能发送数据 c \u003c- chan string表示通道c只能接收数据 c chan string表示通道c可以发送和接收数据 panic出现的情况 关闭值为nil的通道，会panic close后再发送数据，会panic 重复close，会panic 阻塞出现的情况 通道为nil，无论发送与接收都会阻塞 无缓冲通道必须至少有一个接收方才能发送成功，同理至少有一个发送放才能接收成功 有缓冲时：缓冲为空时接收方阻塞， 缓冲满时发送方阻塞 关闭通道后接收方能接收数据直到数据为空，但是还会返回数据 v, ok := \u003c- ch此时ok为false，v为对应数据的零值；可用于检测通道是否关闭 三、接收数据 channel 有一个特性：close关闭之后，在发送的时候会 panic，但是在接收的时候，是可以正常接收的。\n1. for-range 1 2 3 for v := range ch { } range ch会一起迭代直到ch关闭，如果没有数据则会阻塞\n2. for{}死循环 1 2 3 4 5 6 7 for { v, ok := \u003c- ch if !ok { break } fmt.Println(v) } for{}列表循环的关键是要判断ch是否已关闭，如果已关闭则可退出死循环\n通道中有数据则会接收到值，否则会阻塞\n3. select 上面两种方式都是从单通道中接收数据，而select可处理多个通道\nselect类似switch, 一次只能处理一个case，它不是循环for select只能用于channel 若想一直处理数据，要在外面加for{}死循环 1 2 3 4 5 6 7 8 9 10 for { select { case v := \u003c- ch: fmt.Println(v) case v2 := \u003c- ch2: fmt.Println(v2) default: break } } 多个case分支满足时，则会伪随机选择一个处理 所有case都不满足时，没有default则阻塞，有default则处理default select能接收数据，也能用于发送数据 case和default都没有的select会永远阻塞 select中没有fallthough break case中可以没有break，即case执行完就退出select了 你也可以认为每个case最后会默认存在break 你加了break就代表提前退出select，break后面的代码不会执行 break不会退出for，除非使用标签进行break或使用goto return跟select,for,switch没关系；退出的是函数 switch有fallthough, 并且fallthough后面的条件不会进行判断 四、原理 hchan结构如下：\n1 2 3 4 5 6 7 8 9 10 11 12 13 type hchan struct { qcount uint // 当前队列中剩余元素个数 dataqsiz uint // 环形队列长度，即可以存放的元素个数 buf unsafe.Pointer // 环形队列指针 elemsize uint16 // 每个元素的大小 closed uint32 // 标识关闭状态 elemtype *_type // 元素类型 sendx uint // 队列下标，指示元素写入时存放到队列中的位置 recvx uint // 队列下标，指示元素从队列的该位置读出 recvq waitq // 等待读消息的goroutine队列，即等待接收队列 sendq waitq // 等待写消息的goroutine队列，即等待发送队列 lock mutex // 互斥锁，chan不允许并发读写 } 五、参考链接 go channel 万字详解 Go Channel的基本使用及底层原理详解 ",
+  "wordCount" : "2092",
+  "inLanguage": "zh",
+  "image":"https://PheonixHkbxoic.github.io/docs/post/golang-channel.jpeg","datePublished": "2024-01-01T00:00:00Z",
+  "dateModified": "2024-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "PheonixHkbxoic"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://PheonixHkbxoic.github.io/docs/posts/golang/channel/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PheonixHkbxoic | docs",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://PheonixHkbxoic.github.io/docs/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://PheonixHkbxoic.github.io/docs/" accesskey="h" title="PheonixHkbxoic | docs (Alt + H)">PheonixHkbxoic | docs</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://PheonixHkbxoic.github.io/docs/en/" title="English"
+                            aria-label="English">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/" title="PheonixHkbxoic | docs">
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/posts/golang/" title="Golang">
+                    <span>Go</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/posts/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/tags/" title="Tags">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/categories/" title="Categories">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/archives/" title="归档">
+                    <span>时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://PheonixHkbxoic.github.io/docs/about/" title="关于">
+                    <span>‍关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://PheonixHkbxoic.github.io/docs/">主页</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/docs/posts/">文章</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/docs/posts/golang/">Golang</a></div>
+    <h1 class="post-title">
+      Go: Channel
+    </h1>
+    <div class="post-meta"><span title='2024-01-01 00:00:00 &#43;0000 UTC'>2024-01-01</span> &nbsp;&nbsp;5 分钟, 2092 字, PheonixHkbxoic&nbsp;|&nbsp;语言:
+<ul class="i18n_list">
+    <li>
+        <a href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/channel/">English</a>
+    </li>
+</ul>
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://PheonixHkbxoic.github.io/docs/post/golang-channel.jpeg" alt="">
+        
+</figure><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e9%80%9a%e9%81%93" aria-label="通道">通道</a><ul>
+                        
+                <li>
+                    <a href="#%e4%b8%80%e4%bb%80%e4%b9%88%e6%98%afchannel" aria-label="一、什么是Channel">一、什么是Channel</a></li>
+                <li>
+                    <a href="#%e4%ba%8c%e5%a3%b0%e6%98%8e%e4%b8%8e%e8%b5%8b%e5%80%bc" aria-label="二、声明与赋值">二、声明与赋值</a></li>
+                <li>
+                    <a href="#%e4%b8%89%e6%8e%a5%e6%94%b6%e6%95%b0%e6%8d%ae" aria-label="三、接收数据">三、接收数据</a><ul>
+                        
+                <li>
+                    <a href="#1-for-range" aria-label="1. for-range">1. for-range</a></li>
+                <li>
+                    <a href="#2-for%e6%ad%bb%e5%be%aa%e7%8e%af" aria-label="2. for{}死循环">2. for{}死循环</a></li>
+                <li>
+                    <a href="#3-select" aria-label="3. select">3. select</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%9b%9b%e5%8e%9f%e7%90%86" aria-label="四、原理">四、原理</a></li>
+                <li>
+                    <a href="#%e4%ba%94%e5%8f%82%e8%80%83%e9%93%be%e6%8e%a5" aria-label="五、参考链接">五、参考链接</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="通道">通道<a hidden class="anchor" aria-hidden="true" href="#通道">#</a></h2>
+<p>在Go语言中，channel是一种特殊的类型，用于在并发编程中实现不同的goroutine之间的通信和同步。本文将深入探讨golang的channel是如何工作的，并介绍如何使用channel来提高程序的性能和可靠性。</p>
+<h3 id="一什么是channel">一、什么是Channel<a hidden class="anchor" aria-hidden="true" href="#一什么是channel">#</a></h3>
+<p>在Go语言中，使用goroutine单纯地将函数并发执行是没有意义的。函数与函数间需要交换数据才能体现并发执行函数的意义。</p>
+<p>虽然可以使用共享内存进行数据交换，但是共享内存在不同的goroutine中容易发生竞态问题。为了保证数据交换的正确性，必须使用互斥量对内存进行加锁，这种做法势必造成性能问题。</p>
+<p>Go语言的并发模型是CSP（Communicating Sequential Processes），提倡通过通信共享内存而不是通过共享内存而实现通信。</p>
+<p>如果说goroutine是Go程序并发的执行体，channel就是它们之间的连接。channel是可以让一个goroutine发送特定值到另一个goroutine的通信机制。</p>
+<p>Channel是Go中的一个核心类型，你可以把它看成一个管道，通过它并发核心单元就可以发送或者接收数据进行通讯(communication)。</p>
+<p>Channel提供了一种同步的机制，确保在数据发送和接收之间的正确顺序和时机。通过使用channel，我们可以避免在多个goroutine之间共享数据时出现的竞争条件和其他并发问题。</p>
+<p>Go 语言中的通道（channel）是一种特殊的类型。通道像一个传送带或者队列，总是遵循先入先出（First In First Out）的规则，保证收发数据的顺序。每一个通道都是一个具体类型的导管，也就是声明channel的时候需要为其指定元素类型。</p>
+<p>Channel的操作符是箭头 &lt;- (箭头的指向就是数据的流向)。</p>
+<h3 id="二声明与赋值">二、声明与赋值<a hidden class="anchor" aria-hidden="true" href="#二声明与赋值">#</a></h3>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#007f7f">// var 变量 chan 元素类型
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">var</span> ch <span style="color:#fff;font-weight:bold">chan</span> <span style="color:#fff;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#007f7f">// make(chan 元素类型, [容量])
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>c := <span style="color:#fff;font-weight:bold">make</span>(<span style="color:#fff;font-weight:bold">chan</span> <span style="color:#fff;font-weight:bold">string</span>, <span style="color:#ff0;font-weight:bold">10</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>只声明的chan零值为nil，无论发送与接收都会阻塞</li>
+<li>需要使用make创建并赋值，容量可不写或为0 表示无缓冲</li>
+<li>无缓冲通道必须至少有一个接收方才能发送成功，同理至少有一个发送放才能接收成功</li>
+<li>chan有三种操作
+<ol>
+<li>ch &lt;- &ldquo;abc&rdquo; 表示发送</li>
+<li>&lt;- ch 表示接收</li>
+<li>close(ch) 表示关闭</li>
+</ol>
+</li>
+<li>chan有方向，一般用在函数参数声明时，对通道操作进行限制
+<ol>
+<li><code>c chan &lt;- string</code>表示通道c只能发送数据</li>
+<li><code>c &lt;- chan string</code>表示通道c只能接收数据</li>
+<li><code>c chan string</code>表示通道c可以发送和接收数据</li>
+</ol>
+</li>
+<li>panic出现的情况
+<ol>
+<li>关闭值为nil的通道，会panic</li>
+<li>close后再发送数据，会panic</li>
+<li>重复close，会panic</li>
+</ol>
+</li>
+<li>阻塞出现的情况
+<ol>
+<li>通道为nil，无论发送与接收都会阻塞</li>
+<li>无缓冲通道必须至少有一个接收方才能发送成功，同理至少有一个发送放才能接收成功</li>
+<li>有缓冲时：缓冲为空时接收方阻塞， 缓冲满时发送方阻塞</li>
+</ol>
+</li>
+<li>关闭通道后接收方能接收数据直到数据为空，但是还会返回数据 <code>v, ok := &lt;- ch</code>此时ok为false，v为对应数据的零值；可用于检测通道是否关闭</li>
+</ul>
+<h3 id="三接收数据">三、接收数据<a hidden class="anchor" aria-hidden="true" href="#三接收数据">#</a></h3>
+<p>channel 有一个特性：close关闭之后，在发送的时候会 panic，但是在接收的时候，是可以正常接收的。</p>
+<h4 id="1-for-range">1. for-range<a hidden class="anchor" aria-hidden="true" href="#1-for-range">#</a></h4>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">for</span> v := <span style="color:#fff;font-weight:bold">range</span> ch {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>range ch会一起迭代直到ch关闭，如果没有数据则会阻塞</p>
+<h4 id="2-for死循环">2. for{}死循环<a hidden class="anchor" aria-hidden="true" href="#2-for死循环">#</a></h4>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">for</span> {
+</span></span><span style="display:flex;"><span>    v, ok := &lt;- ch
+</span></span><span style="display:flex;"><span>    <span style="color:#fff;font-weight:bold">if</span> !ok {
+</span></span><span style="display:flex;"><span>        <span style="color:#fff;font-weight:bold">break</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    fmt.Println(v)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>for{}列表循环的关键是要判断ch是否已关闭，如果已关闭则可退出死循环<br>
+通道中有数据则会接收到值，否则会阻塞</p>
+<h4 id="3-select">3. select<a hidden class="anchor" aria-hidden="true" href="#3-select">#</a></h4>
+<p>上面两种方式都是从单通道中接收数据，而select可处理多个通道</p>
+<ul>
+<li>select类似switch, 一次只能处理一个case，它不是循环for</li>
+<li>select只能用于channel</li>
+<li>若想一直处理数据，要在外面加for{}死循环
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">for</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#fff;font-weight:bold">select</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#fff;font-weight:bold">case</span> v := &lt;- ch:
+</span></span><span style="display:flex;"><span>        fmt.Println(v)
+</span></span><span style="display:flex;"><span>    <span style="color:#fff;font-weight:bold">case</span> v2 := &lt;- ch2:
+</span></span><span style="display:flex;"><span>        fmt.Println(v2)
+</span></span><span style="display:flex;"><span>    <span style="color:#fff;font-weight:bold">default</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#fff;font-weight:bold">break</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>多个case分支满足时，则会<code>伪随机</code>选择一个处理</li>
+<li>所有case都不满足时，没有default则阻塞，有default则处理default</li>
+<li>select能接收数据，也能用于发送数据</li>
+<li>case和default都没有的select会永远阻塞</li>
+<li>select中没有fallthough</li>
+<li>break
+<ol>
+<li>case中可以没有break，即case执行完就退出select了</li>
+<li>你也可以认为每个case最后会默认存在break</li>
+<li>你加了break就代表提前退出select，break后面的代码不会执行</li>
+<li>break不会退出for，除非使用标签进行break或使用goto</li>
+<li>return跟select,for,switch没关系；退出的是函数</li>
+<li>switch有fallthough, 并且fallthough后面的条件不会进行判断</li>
+</ol>
+</li>
+</ul>
+<h3 id="四原理">四、原理<a hidden class="anchor" aria-hidden="true" href="#四原理">#</a></h3>
+<p>hchan结构如下：</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">type</span> hchan <span style="color:#fff;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>    qcount   <span style="color:#fff;font-weight:bold">uint</span>           <span style="color:#007f7f">// 当前队列中剩余元素个数
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>    dataqsiz <span style="color:#fff;font-weight:bold">uint</span>           <span style="color:#007f7f">// 环形队列长度，即可以存放的元素个数
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>    buf      unsafe.Pointer <span style="color:#007f7f">// 环形队列指针
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>    elemsize <span style="color:#fff;font-weight:bold">uint16</span>         <span style="color:#007f7f">// 每个元素的大小
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>    closed   <span style="color:#fff;font-weight:bold">uint32</span>         <span style="color:#007f7f">// 标识关闭状态
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>    elemtype *_type         <span style="color:#007f7f">// 元素类型
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>    sendx    <span style="color:#fff;font-weight:bold">uint</span>           <span style="color:#007f7f">// 队列下标，指示元素写入时存放到队列中的位置
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>    recvx    <span style="color:#fff;font-weight:bold">uint</span>           <span style="color:#007f7f">// 队列下标，指示元素从队列的该位置读出
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>    recvq    waitq          <span style="color:#007f7f">// 等待读消息的goroutine队列，即等待接收队列
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>    sendq    waitq          <span style="color:#007f7f">// 等待写消息的goroutine队列，即等待发送队列
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>    lock     mutex          <span style="color:#007f7f">// 互斥锁，chan不允许并发读写
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="五参考链接">五、参考链接<a hidden class="anchor" aria-hidden="true" href="#五参考链接">#</a></h3>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/643013131">go channel 万字详解</a></li>
+<li><a href="https://blog.csdn.net/y1391625461/article/details/124292119">Go Channel的基本使用及底层原理详解</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://PheonixHkbxoic.github.io/docs/tags/%E9%80%9A%E9%81%93/">通道</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/docs/tags/channel/">channel</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/docs/tags/chan/">chan</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://PheonixHkbxoic.github.io/docs/posts/golang/range/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>Go: range迭代</span>
+  </a>
+  <a class="next" href="https://PheonixHkbxoic.github.io/docs/posts/golang/string/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>Go: 字符串</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://PheonixHkbxoic.github.io/docs/">PheonixHkbxoic | docs</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制!';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Go: 字典 | PheonixHkbxoic</title>
+<title>Go: 字典 | PheonixHkbxoic | docs</title>
 <meta name="keywords" content="golang, map, 字典, kv">
-<meta name="description" content="字典">
+<meta name="description" content="字典 一、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 // 声明 指明key，value的类型 var a map[string]string // 赋值 a = map[string]string{} // 声明并赋值 var b map[string]string = map[string]string{} var c = map[string]string{ &#34;a&#34; : &#34;a&#34;, &#34;b&#34; :">
 <meta name="author" content="PheonixHkbxoic">
 <link rel="canonical" href="https://PheonixHkbxoic.github.io/docs/posts/golang/map/">
 <link crossorigin="anonymous" href="/docs/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
@@ -20,8 +20,8 @@
 <link rel="mask-icon" href="https://PheonixHkbxoic.github.io/docs/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/map/">
 <link rel="alternate" hreflang="zh" href="https://PheonixHkbxoic.github.io/docs/posts/golang/map/">
+<link rel="alternate" hreflang="en" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/map/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,17 +59,17 @@
 
     </style>
 </noscript><meta property="og:title" content="Go: 字典" />
-<meta property="og:description" content="字典" />
+<meta property="og:description" content="字典 一、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 // 声明 指明key，value的类型 var a map[string]string // 赋值 a = map[string]string{} // 声明并赋值 var b map[string]string = map[string]string{} var c = map[string]string{ &#34;a&#34; : &#34;a&#34;, &#34;b&#34; :" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://PheonixHkbxoic.github.io/docs/posts/golang/map/" />
 <meta property="og:image" content="https://PheonixHkbxoic.github.io/docs/post/golang-map.jpeg" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-01-03T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-01-03T00:00:00+00:00" />
+<meta property="article:published_time" content="2024-01-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-08T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://PheonixHkbxoic.github.io/docs/post/golang-map.jpeg" />
 <meta name="twitter:title" content="Go: 字典"/>
-<meta name="twitter:description" content="字典"/>
+<meta name="twitter:description" content="字典 一、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 // 声明 指明key，value的类型 var a map[string]string // 赋值 a = map[string]string{} // 声明并赋值 var b map[string]string = map[string]string{} var c = map[string]string{ &#34;a&#34; : &#34;a&#34;, &#34;b&#34; :"/>
 
 
 <script type="application/ld+json">
@@ -104,15 +104,15 @@
   "@type": "BlogPosting",
   "headline": "Go: 字典",
   "name": "Go: 字典",
-  "description": "字典",
+  "description": "字典 一、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 // 声明 指明key，value的类型 var a map[string]string // 赋值 a = map[string]string{} // 声明并赋值 var b map[string]string = map[string]string{} var c = map[string]string{ \u0026#34;a\u0026#34; : \u0026#34;a\u0026#34;, \u0026#34;b\u0026#34; :",
   "keywords": [
     "golang", "map", "字典", "kv"
   ],
-  "articleBody": "字典 ",
-  "wordCount" : "2",
+  "articleBody": "字典 一、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 // 声明 指明key，value的类型 var a map[string]string // 赋值 a = map[string]string{} // 声明并赋值 var b map[string]string = map[string]string{} var c = map[string]string{ \"a\" : \"a\", \"b\" : \"b\", } d := map[string]string{} // 使用make赋值, 没有容量参数 var e = make(map[string]string, 5) 二、注意事项 只声明的map未初始化, 为nil，添加元素会报错， 查询、删除不会报错相当于空操作 不支持并发，否则报错panic key的类型不同，hash的计算方式也不同 range遍历是随机的 ok可判断myKey是否存在：v,ok = m[“myKey”]；即使不存在v也是零值 查询键值对时，最好检查键是否存在，避免操作零值 delete删除键值对 map为引用类型，不能比较 数组和切片允许对元素进行取址操作，但不允许对map的元素进行取址操作 value可以是Go支持的任意数据类型，而key则所有限制 key的数据类型必须是可以使用==和!=进行比较\n所以，key不能是函数、切片、map，因此这些数据类型不能进行比较\n另外，而数组和结构体则可以作为map的key\n不过，如果数组的元素包含函数、切片、map，则数组不能作为map的key，结构体的字段如果有以上三者，也同样不能作为map的key。\n三、实现原理 3.1 插入 3.2 更新 3.3 扩容 ",
+  "wordCount" : "512",
   "inLanguage": "zh",
-  "image":"https://PheonixHkbxoic.github.io/docs/post/golang-map.jpeg","datePublished": "2024-01-03T00:00:00Z",
-  "dateModified": "2024-01-03T00:00:00Z",
+  "image":"https://PheonixHkbxoic.github.io/docs/post/golang-map.jpeg","datePublished": "2024-01-04T00:00:00Z",
+  "dateModified": "2024-01-08T00:00:00Z",
   "author":{
     "@type": "Person",
     "name": "PheonixHkbxoic"
@@ -123,7 +123,7 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "PheonixHkbxoic",
+    "name": "PheonixHkbxoic | docs",
     "logo": {
       "@type": "ImageObject",
       "url": "https://PheonixHkbxoic.github.io/docs/favicon.ico"
@@ -148,7 +148,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://PheonixHkbxoic.github.io/docs/" accesskey="h" title="PheonixHkbxoic (Alt + H)">PheonixHkbxoic</a>
+            <a href="https://PheonixHkbxoic.github.io/docs/" accesskey="h" title="PheonixHkbxoic | docs (Alt + H)">PheonixHkbxoic | docs</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -180,7 +180,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/" title="PheonixHkbxoic">
+                <a href="https://PheonixHkbxoic.github.io/docs/" title="PheonixHkbxoic | docs">
                     <span>主页</span>
                 </a>
             </li>
@@ -228,9 +228,9 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://PheonixHkbxoic.github.io/docs/">主页</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/docs/posts/">文章</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/docs/posts/golang/">Golang</a></div>
     <h1 class="post-title">
-      Go: 字典<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+      Go: 字典
     </h1>
-    <div class="post-meta"><span title='2024-01-03 00:00:00 &#43;0000 UTC'>2024-01-03</span> &nbsp;&nbsp;1 分钟, 2 字, PheonixHkbxoic&nbsp;|&nbsp;语言:
+    <div class="post-meta"><span title='2024-01-04 00:00:00 &#43;0000 UTC'>2024-01-04</span> &nbsp;&nbsp;2 分钟, 512 字, PheonixHkbxoic&nbsp;|&nbsp;语言:
 <ul class="i18n_list">
     <li>
         <a href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/map/">English</a>
@@ -238,7 +238,10 @@
 </ul>
 
 </div>
-  </header> <div class="toc">
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://PheonixHkbxoic.github.io/docs/post/golang-map.jpeg" alt="">
+        
+</figure><div class="toc">
     <details  open>
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">目录</span>
@@ -246,14 +249,92 @@
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#%e5%ad%97%e5%85%b8" aria-label="字典">字典</a>
+                    <a href="#%e5%ad%97%e5%85%b8" aria-label="字典">字典</a><ul>
+                        
+                <li>
+                    <a href="#%e4%b8%80%e5%a3%b0%e6%98%8e%e4%b8%8e%e8%b5%8b%e5%80%bc" aria-label="一、声明与赋值">一、声明与赋值</a></li>
+                <li>
+                    <a href="#%e4%ba%8c%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9" aria-label="二、注意事项">二、注意事项</a></li>
+                <li>
+                    <a href="#%e4%b8%89%e5%ae%9e%e7%8e%b0%e5%8e%9f%e7%90%86" aria-label="三、实现原理">三、实现原理</a><ul>
+                        
+                <li>
+                    <a href="#31-%e6%8f%92%e5%85%a5" aria-label="3.1 插入">3.1 插入</a></li>
+                <li>
+                    <a href="#32-%e6%9b%b4%e6%96%b0" aria-label="3.2 更新">3.2 更新</a></li>
+                <li>
+                    <a href="#33-%e6%89%a9%e5%ae%b9" aria-label="3.3 扩容">3.3 扩容</a>
                 </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
             </ul>
         </div>
     </details>
 </div>
 
   <div class="post-content"><h2 id="字典">字典<a hidden class="anchor" aria-hidden="true" href="#字典">#</a></h2>
+<h3 id="一声明与赋值">一、声明与赋值<a hidden class="anchor" aria-hidden="true" href="#一声明与赋值">#</a></h3>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#007f7f">// 声明 指明key，value的类型
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">var</span> a <span style="color:#fff;font-weight:bold">map</span>[<span style="color:#fff;font-weight:bold">string</span>]<span style="color:#fff;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#007f7f">// 赋值
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span>a = <span style="color:#fff;font-weight:bold">map</span>[<span style="color:#fff;font-weight:bold">string</span>]<span style="color:#fff;font-weight:bold">string</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007f7f">// 声明并赋值
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">var</span> b <span style="color:#fff;font-weight:bold">map</span>[<span style="color:#fff;font-weight:bold">string</span>]<span style="color:#fff;font-weight:bold">string</span> = <span style="color:#fff;font-weight:bold">map</span>[<span style="color:#fff;font-weight:bold">string</span>]<span style="color:#fff;font-weight:bold">string</span>{}
+</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">var</span> c = <span style="color:#fff;font-weight:bold">map</span>[<span style="color:#fff;font-weight:bold">string</span>]<span style="color:#fff;font-weight:bold">string</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#0ff;font-weight:bold">&#34;a&#34;</span> : <span style="color:#0ff;font-weight:bold">&#34;a&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#0ff;font-weight:bold">&#34;b&#34;</span> : <span style="color:#0ff;font-weight:bold">&#34;b&#34;</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>d := <span style="color:#fff;font-weight:bold">map</span>[<span style="color:#fff;font-weight:bold">string</span>]<span style="color:#fff;font-weight:bold">string</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007f7f">// 使用make赋值, 没有容量参数
+</span></span></span><span style="display:flex;"><span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">var</span> e = <span style="color:#fff;font-weight:bold">make</span>(<span style="color:#fff;font-weight:bold">map</span>[<span style="color:#fff;font-weight:bold">string</span>]<span style="color:#fff;font-weight:bold">string</span>, <span style="color:#ff0;font-weight:bold">5</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="二注意事项">二、注意事项<a hidden class="anchor" aria-hidden="true" href="#二注意事项">#</a></h3>
+<ul>
+<li>只声明的map未初始化, 为nil，添加元素会报错， 查询、删除不会报错相当于空操作</li>
+<li>不支持并发，否则报错panic</li>
+<li>key的类型不同，hash的计算方式也不同</li>
+<li>range遍历是随机的</li>
+<li>ok可判断myKey是否存在：v,ok = m[&ldquo;myKey&rdquo;]；即使不存在v也是零值</li>
+<li>查询键值对时，最好检查键是否存在，避免操作零值</li>
+<li>delete删除键值对</li>
+<li>map为引用类型，不能比较</li>
+<li>数组和切片允许对元素进行取址操作，但不允许对map的元素进行取址操作</li>
+<li>value可以是Go支持的任意数据类型，而key则所有限制</li>
+</ul>
+<blockquote>
+<p>key的数据类型必须是可以使用==和!=进行比较<br>
+所以，key不能是函数、切片、map，因此这些数据类型不能进行比较<br>
+另外，而数组和结构体则可以作为map的key<br>
+不过，如果数组的元素包含函数、切片、map，则数组不能作为map的key，结构体的字段如果有以上三者，也同样不能作为map的key。</p>
+</blockquote>
+<h3 id="三实现原理">三、实现原理<a hidden class="anchor" aria-hidden="true" href="#三实现原理">#</a></h3>
+<h4 id="31-插入">3.1 插入<a hidden class="anchor" aria-hidden="true" href="#31-插入">#</a></h4>
+<h4 id="32-更新">3.2 更新<a hidden class="anchor" aria-hidden="true" href="#32-更新">#</a></h4>
+<h4 id="33-扩容">3.3 扩容<a hidden class="anchor" aria-hidden="true" href="#33-扩容">#</a></h4>
 
 
   </div>
@@ -266,15 +347,10 @@
       <li><a href="https://PheonixHkbxoic.github.io/docs/tags/kv/">kv</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://PheonixHkbxoic.github.io/docs/posts/golang/array/">
-    <span class="title">« 上一页</span>
-    <br>
-    <span>Go: 数组</span>
-  </a>
-  <a class="next" href="https://PheonixHkbxoic.github.io/docs/posts/golang/range/">
+  <a class="next" href="https://PheonixHkbxoic.github.io/docs/posts/golang/slice/">
     <span class="title">下一页 »</span>
     <br>
-    <span>Go: range迭代</span>
+    <span>Go: 切片</span>
   </a>
 </nav>
 
@@ -283,7 +359,7 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://PheonixHkbxoic.github.io/docs/">PheonixHkbxoic</a></span>
+    <span>&copy; 2024 <a href="https://PheonixHkbxoic.github.io/docs/">PheonixHkbxoic | docs</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>golang on PheonixHkbxoic</title>
+    <title>golang on PheonixHkbxoic | docs</title>
     <link>https://PheonixHkbxoic.github.io/docs/en/categories/golang/</link>
-    <description>Recent content in golang on PheonixHkbxoic</description>
+    <description>Recent content in golang on PheonixHkbxoic | docs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-US</language>
     <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/en/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go: Array</title>
@@ -22,7 +22,7 @@
       <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://PheonixHkbxoic.github.io/docs/en/posts/golang/map/</guid>
-      <description>Map</description>
+      <description>Map 一、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 // 声明 指明key，value的类型 var a map[string]string // 赋值 a = map[string]string{} // 声明并赋值 var b map[string]string = map[string]string{} var c = map[string]string{ &amp;#34;a&amp;#34; : &amp;#34;a&amp;#34;, &amp;#34;b&amp;#34; : &amp;#34;b&amp;#34;,</description>
     </item>
     
     <item>
@@ -41,6 +41,15 @@
       
       <guid>https://PheonixHkbxoic.github.io/docs/en/posts/golang/range/</guid>
       <description>迭代数组、切片、映射、字符串和通道,i,v是值传递，修改v数组元素不变， 数组与切片循环前次数已确定，遍历通道直到关闭, 没有数据则会阻塞</description>
+    </item>
+    
+    <item>
+      <title>Go: Channel</title>
+      <link>https://PheonixHkbxoic.github.io/docs/en/posts/golang/channel/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/en/posts/golang/channel/</guid>
+      <description>Channel 在Go语言中，channel是一种特殊的类型，用于在并发编程中实现不同的goroutine之间的通信和同步。本文将深入探讨golang的c</description>
     </item>
     
     <item>

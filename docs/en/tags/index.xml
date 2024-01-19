@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on PheonixHkbxoic</title>
+    <title>Tags on PheonixHkbxoic | docs</title>
     <link>https://PheonixHkbxoic.github.io/docs/en/tags/</link>
-    <description>Recent content in Tags on PheonixHkbxoic</description>
+    <description>Recent content in Tags on PheonixHkbxoic | docs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-US</language>
     <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/en/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Array</title>
@@ -67,6 +67,24 @@
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://PheonixHkbxoic.github.io/docs/en/tags/range/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chan</title>
+      <link>https://PheonixHkbxoic.github.io/docs/en/tags/chan/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/en/tags/chan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>channel</title>
+      <link>https://PheonixHkbxoic.github.io/docs/en/tags/channel/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://PheonixHkbxoic.github.io/docs/en/tags/channel/</guid>
       <description></description>
     </item>
     

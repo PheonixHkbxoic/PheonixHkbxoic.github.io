@@ -1,10 +1,10 @@
 
 BaseUrl: "https://PheonixHkbxoic.github.io/docs/"
-Title: "PheonixHkbxoic"
+Title: "PheonixHkbxoic | docs"
 theme: "PaperMod"
 
 defaultContentLanguage: "zh"
-enableInlineShortcodes: true
+# enableInlineShortcodes: true
 enableEmoji: true # 允许使用 Emoji 表情，建议 true
 enableRobotsTXT: true # 允许爬虫抓取到搜索引擎，建议 true
 
@@ -34,6 +34,7 @@ outputs:
 
 languages:
   zh: 
+    languageCode: "zh-CN"
     languageName: "中文"
     menu:
       main:
@@ -47,7 +48,7 @@ languages:
           weight: 2
         - identifier: Go
           name:   Go
-          pageRef: /posts/golang/
+          pageRef: posts/golang/
           weight: 3
         - identifier: posts
           name:   文章
@@ -70,6 +71,7 @@ languages:
           pageRef: about
           weight: 50
   en:
+    languageCode: "en-US"
     languageName: "English"
     menu:
       main:
@@ -83,23 +85,23 @@ languages:
           weight: 2
         - identifier: Go
           name:   Go
-          pageRef: /posts/golang/
+          pageRef: posts/golang/
           weight: 3
         - identifier: posts
           name:   Posts
-          pageRef: posts
+          pageRef: posts/
           weight: 4
         - identifier: tags
           name:   Tags
-          pageRef: tags
+          pageRef: tags/
           weight: 15
         - identifier: categories
           name: Categories
-          pageRef: categories
+          pageRef: categories/
           weight: 20
         - identifier: archives
           name: Archives
-          pageRef: archives
+          pageRef: archives/
           weight: 30
         - identifier: about
           name:   About
@@ -109,7 +111,7 @@ languages:
 
 Params:
   #env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  description: "PheonixHkbxoic 个人博客, hugo Papermod 主题, 读书笔记, 张昌辉个人博客"
+  description: "PheonixHkbxoic 个人博客, hugo Papermod 主题"
   author: PheonixHkbxoic
   DateFormat: "2006-01-02"
   #ShowShareButtons: true

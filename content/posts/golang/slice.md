@@ -9,7 +9,7 @@ hideMeta: false         # 是否隐藏文章的元信息，如发布日期、作
 summary: "切片是不定长的特定元素类型的序列,可以理解为动态数组,切片本身不能存储任何数据，都是底层数组存储数据，修改切片的时候修改的是底层数组中的数据,底层实现是一个结构体，包括长度、容量和一个指向实际数组的unsafe.Pointer指针"
 lastMod: 2024-01-03
 cover:
-    hidden: true
+    hidden: false
     image: "post/golang-slice.jpeg"
 weight: 30
 categories: [golang]

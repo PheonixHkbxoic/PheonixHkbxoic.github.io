@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>赋值 on PheonixHkbxoic</title>
+    <title>赋值 on PheonixHkbxoic | docs</title>
     <link>https://PheonixHkbxoic.github.io/docs/en/tags/%E8%B5%8B%E5%80%BC/</link>
-    <description>Recent content in 赋值 on PheonixHkbxoic</description>
+    <description>Recent content in 赋值 on PheonixHkbxoic | docs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-US</language>
     <lastBuildDate>Wed, 20 Dec 2023 22:15:37 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/en/tags/%E8%B5%8B%E5%80%BC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go: variable</title>
