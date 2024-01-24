@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>文章 on PheonixHkbxoic | docs</title>
-    <link>https://PheonixHkbxoic.github.io/docs/posts/</link>
+    <link>https://PheonixHkbxoic.github.io/posts/</link>
     <description>Recent content in 文章 on PheonixHkbxoic | docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 20 Dec 2023 22:15:37 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Dec 2023 22:15:37 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

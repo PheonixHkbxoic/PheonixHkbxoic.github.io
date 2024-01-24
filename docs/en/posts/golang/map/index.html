@@ -9,19 +9,19 @@
 <meta name="keywords" content="golang, map, kv">
 <meta name="description" content="Map 一、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 // 声明 指明key，value的类型 var a map[string]string // 赋值 a = map[string]string{} // 声明并赋值 var b map[string]string = map[string]string{} var c = map[string]string{ &#34;a&#34; : &#34;a&#34;, &#34;b&#34; : &#34;b&#34;,">
 <meta name="author" content="PheonixHkbxoic">
-<link rel="canonical" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/map/">
-<link crossorigin="anonymous" href="/docs/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/docs/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+<link rel="canonical" href="https://PheonixHkbxoic.github.io/en/posts/golang/map/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://PheonixHkbxoic.github.io/docs/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://PheonixHkbxoic.github.io/docs/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://PheonixHkbxoic.github.io/docs/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://PheonixHkbxoic.github.io/docs/apple-touch-icon.png">
-<link rel="mask-icon" href="https://PheonixHkbxoic.github.io/docs/safari-pinned-tab.svg">
+<link rel="icon" href="https://PheonixHkbxoic.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://PheonixHkbxoic.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://PheonixHkbxoic.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://PheonixHkbxoic.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://PheonixHkbxoic.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh" href="https://PheonixHkbxoic.github.io/docs/posts/golang/map/">
-<link rel="alternate" hreflang="en" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/map/">
+<link rel="alternate" hreflang="zh" href="https://PheonixHkbxoic.github.io/posts/golang/map/">
+<link rel="alternate" hreflang="en" href="https://PheonixHkbxoic.github.io/en/posts/golang/map/">
 <noscript>
     <style>
         #theme-toggle,
@@ -61,13 +61,13 @@
 </noscript><meta property="og:title" content="Go: Map" />
 <meta property="og:description" content="Map 一、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 // 声明 指明key，value的类型 var a map[string]string // 赋值 a = map[string]string{} // 声明并赋值 var b map[string]string = map[string]string{} var c = map[string]string{ &#34;a&#34; : &#34;a&#34;, &#34;b&#34; : &#34;b&#34;," />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://PheonixHkbxoic.github.io/docs/en/posts/golang/map/" />
-<meta property="og:image" content="https://PheonixHkbxoic.github.io/docs/post/golang-map.jpeg" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://PheonixHkbxoic.github.io/en/posts/golang/map/" />
+<meta property="og:image" content="https://PheonixHkbxoic.github.io/post/golang-map.jpeg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-01-03T00:00:00+00:00" />
 <meta property="article:modified_time" content="2024-01-04T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://PheonixHkbxoic.github.io/docs/post/golang-map.jpeg" />
+<meta name="twitter:image" content="https://PheonixHkbxoic.github.io/post/golang-map.jpeg" />
 <meta name="twitter:title" content="Go: Map"/>
 <meta name="twitter:description" content="Map 一、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 // 声明 指明key，value的类型 var a map[string]string // 赋值 a = map[string]string{} // 声明并赋值 var b map[string]string = map[string]string{} var c = map[string]string{ &#34;a&#34; : &#34;a&#34;, &#34;b&#34; : &#34;b&#34;,"/>
 
@@ -81,13 +81,19 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Article",
-      "item": "https://PheonixHkbxoic.github.io/docs/en/posts/"
+      "item": "https://PheonixHkbxoic.github.io/en/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
+      "name": "Golang",
+      "item": "https://PheonixHkbxoic.github.io/en/posts/golang/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
       "name": "Go: Map",
-      "item": "https://PheonixHkbxoic.github.io/docs/en/posts/golang/map/"
+      "item": "https://PheonixHkbxoic.github.io/en/posts/golang/map/"
     }
   ]
 }
@@ -105,7 +111,7 @@
   "articleBody": "Map 一、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 // 声明 指明key，value的类型 var a map[string]string // 赋值 a = map[string]string{} // 声明并赋值 var b map[string]string = map[string]string{} var c = map[string]string{ \"a\" : \"a\", \"b\" : \"b\", } d := map[string]string{} // 使用make赋值, 没有容量参数 var e = make(map[string]string, 5) 二、注意事项 只声明的map未初始化, 为nil，添加元素会报错， 查询、删除不会报错相当于空操作 不支持并发，否则报错panic key的类型不同，hash的计算方式也不同 range遍历是随机的 ok可判断myKey是否存在：v,ok = m[“myKey”]；即使不存在v也是零值 查询键值对时，最好检查键是否存在，避免操作零值 delete删除键值对 map为引用类型，不能比较 数组和切片允许对元素进行取址操作，但不允许对map的元素进行取址操作 value可以是Go支持的任意数据类型，而key则所有限制 key的数据类型必须是可以使用==和!=进行比较\n所以，key不能是函数、切片、map，因此这些数据类型不能进行比较\n另外，而数组和结构体则可以作为map的key\n不过，如果数组的元素包含函数、切片、map，则数组不能作为map的key，结构体的字段如果有以上三者，也同样不能作为map的key。\n三、实现原理 3.1 插入 3.2 更新 3.3 扩容 ",
   "wordCount" : "511",
   "inLanguage": "en",
-  "image":"https://PheonixHkbxoic.github.io/docs/post/golang-map.jpeg","datePublished": "2024-01-03T00:00:00Z",
+  "image":"https://PheonixHkbxoic.github.io/post/golang-map.jpeg","datePublished": "2024-01-03T00:00:00Z",
   "dateModified": "2024-01-04T00:00:00Z",
   "author":{
     "@type": "Person",
@@ -113,14 +119,14 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://PheonixHkbxoic.github.io/docs/en/posts/golang/map/"
+    "@id": "https://PheonixHkbxoic.github.io/en/posts/golang/map/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "PheonixHkbxoic | docs",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://PheonixHkbxoic.github.io/docs/favicon.ico"
+      "url": "https://PheonixHkbxoic.github.io/favicon.ico"
     }
   }
 }
@@ -142,7 +148,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://PheonixHkbxoic.github.io/docs/en/" accesskey="h" title="PheonixHkbxoic | docs (Alt + H)">PheonixHkbxoic | docs</a>
+            <a href="https://PheonixHkbxoic.github.io/en/" accesskey="h" title="PheonixHkbxoic | docs (Alt + H)">PheonixHkbxoic | docs</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -166,7 +172,7 @@
                 </button>
                 <ul class="lang-switch"><li>|</li>
                     <li>
-                        <a href="https://PheonixHkbxoic.github.io/docs/" title="中文"
+                        <a href="https://PheonixHkbxoic.github.io/" title="中文"
                             aria-label="中文">中文</a>
                     </li>
                 </ul>
@@ -174,42 +180,42 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://PheonixHkbxoic.github.io/en/docs/" title="PheonixHkbxoic | docs">
+                <a href="https://PheonixHkbxoic.github.io/en/" title="PheonixHkbxoic | docs">
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/en/docs/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://PheonixHkbxoic.github.io/en/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/en/" title="Go">
+                <a href="https://PheonixHkbxoic.github.io/en/posts/golang/" title="Golang">
                     <span>Go</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/en/docs/posts/" title="Article">
+                <a href="https://PheonixHkbxoic.github.io/en/posts/" title="Article">
                     <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/en/docs/tags/" title="Tags">
+                <a href="https://PheonixHkbxoic.github.io/en/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/en/docs/categories/" title="Categories">
+                <a href="https://PheonixHkbxoic.github.io/en/categories/" title="Categories">
                     <span>Categories</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/en/" title="Archives">
+                <a href="https://PheonixHkbxoic.github.io/en/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/en/docs/about/" title="About">
+                <a href="https://PheonixHkbxoic.github.io/en/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
@@ -220,20 +226,20 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://PheonixHkbxoic.github.io/docs/en/">Home</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/docs/en/posts/">Article</a></div>
+    <div class="breadcrumbs"><a href="https://PheonixHkbxoic.github.io/en/">Home</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/en/posts/">Article</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/en/posts/golang/">Golang</a></div>
     <h1 class="post-title">
       Go: Map<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
     </h1>
     <div class="post-meta"><span title='2024-01-03 00:00:00 &#43;0000 UTC'>2024-01-03</span> &nbsp;&nbsp;2 min, 511 words, PheonixHkbxoic&nbsp;|&nbsp;Translations:
 <ul class="i18n_list">
     <li>
-        <a href="https://PheonixHkbxoic.github.io/docs/posts/golang/map/">中文</a>
+        <a href="https://PheonixHkbxoic.github.io/posts/golang/map/">中文</a>
     </li>
 </ul>
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="lazy" src="https://PheonixHkbxoic.github.io/docs/post/golang-map.jpeg" alt="">
+<figure class="entry-cover"><img loading="lazy" src="https://PheonixHkbxoic.github.io/post/golang-map.jpeg" alt="">
         
 </figure><div class="toc">
     <details  open>
@@ -335,17 +341,17 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://PheonixHkbxoic.github.io/docs/en/tags/golang/">golang</a></li>
-      <li><a href="https://PheonixHkbxoic.github.io/docs/en/tags/map/">map</a></li>
-      <li><a href="https://PheonixHkbxoic.github.io/docs/en/tags/kv/">kv</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/en/tags/golang/">golang</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/en/tags/map/">map</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/en/tags/kv/">kv</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/array/">
+  <a class="prev" href="https://PheonixHkbxoic.github.io/en/posts/golang/array/">
     <span class="title">« Prev</span>
     <br>
     <span>Go: Array</span>
   </a>
-  <a class="next" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/slice/">
+  <a class="next" href="https://PheonixHkbxoic.github.io/en/posts/golang/slice/">
     <span class="title">Next »</span>
     <br>
     <span>Go: Slice</span>
@@ -357,7 +363,7 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://PheonixHkbxoic.github.io/docs/en/">PheonixHkbxoic | docs</a></span>
+    <span>&copy; 2024 <a href="https://PheonixHkbxoic.github.io/en/">PheonixHkbxoic | docs</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

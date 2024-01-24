@@ -9,19 +9,19 @@
 <meta name="keywords" content="通道, channel, chan">
 <meta name="description" content="通道 在Go语言中，channel是一种特殊的类型，用于在并发编程中实现不同的goroutine之间的通信和同步。本文将深入探讨golang的">
 <meta name="author" content="PheonixHkbxoic">
-<link rel="canonical" href="https://PheonixHkbxoic.github.io/docs/posts/golang/channel/">
-<link crossorigin="anonymous" href="/docs/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/docs/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+<link rel="canonical" href="https://PheonixHkbxoic.github.io/posts/golang/channel/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://PheonixHkbxoic.github.io/docs/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://PheonixHkbxoic.github.io/docs/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://PheonixHkbxoic.github.io/docs/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://PheonixHkbxoic.github.io/docs/apple-touch-icon.png">
-<link rel="mask-icon" href="https://PheonixHkbxoic.github.io/docs/safari-pinned-tab.svg">
+<link rel="icon" href="https://PheonixHkbxoic.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://PheonixHkbxoic.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://PheonixHkbxoic.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://PheonixHkbxoic.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://PheonixHkbxoic.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/channel/">
-<link rel="alternate" hreflang="zh" href="https://PheonixHkbxoic.github.io/docs/posts/golang/channel/">
+<link rel="alternate" hreflang="en" href="https://PheonixHkbxoic.github.io/en/posts/golang/channel/">
+<link rel="alternate" hreflang="zh" href="https://PheonixHkbxoic.github.io/posts/golang/channel/">
 <noscript>
     <style>
         #theme-toggle,
@@ -61,13 +61,13 @@
 </noscript><meta property="og:title" content="Go: 通道" />
 <meta property="og:description" content="通道 在Go语言中，channel是一种特殊的类型，用于在并发编程中实现不同的goroutine之间的通信和同步。本文将深入探讨golang的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://PheonixHkbxoic.github.io/docs/posts/golang/channel/" />
-<meta property="og:image" content="https://PheonixHkbxoic.github.io/docs/post/golang-channel.jpeg" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://PheonixHkbxoic.github.io/posts/golang/channel/" />
+<meta property="og:image" content="https://PheonixHkbxoic.github.io/post/golang-channel.jpeg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-01-01T00:00:00+00:00" />
 <meta property="article:modified_time" content="2024-01-01T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://PheonixHkbxoic.github.io/docs/post/golang-channel.jpeg" />
+<meta name="twitter:image" content="https://PheonixHkbxoic.github.io/post/golang-channel.jpeg" />
 <meta name="twitter:title" content="Go: 通道"/>
 <meta name="twitter:description" content="通道 在Go语言中，channel是一种特殊的类型，用于在并发编程中实现不同的goroutine之间的通信和同步。本文将深入探讨golang的"/>
 
@@ -81,19 +81,19 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "文章",
-      "item": "https://PheonixHkbxoic.github.io/docs/posts/"
+      "item": "https://PheonixHkbxoic.github.io/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Golang",
-      "item": "https://PheonixHkbxoic.github.io/docs/posts/golang/"
+      "item": "https://PheonixHkbxoic.github.io/posts/golang/"
     }, 
     {
       "@type": "ListItem",
       "position":  3 ,
       "name": "Go: 通道",
-      "item": "https://PheonixHkbxoic.github.io/docs/posts/golang/channel/"
+      "item": "https://PheonixHkbxoic.github.io/posts/golang/channel/"
     }
   ]
 }
@@ -111,7 +111,7 @@
   "articleBody": "通道 在Go语言中，channel是一种特殊的类型，用于在并发编程中实现不同的goroutine之间的通信和同步。本文将深入探讨golang的channel是如何工作的，并介绍如何使用channel来提高程序的性能和可靠性。\n一、什么是Channel 在Go语言中，使用goroutine单纯地将函数并发执行是没有意义的。函数与函数间需要交换数据才能体现并发执行函数的意义。\n虽然可以使用共享内存进行数据交换，但是共享内存在不同的goroutine中容易发生竞态问题。为了保证数据交换的正确性，必须使用互斥量对内存进行加锁，这种做法势必造成性能问题。\nGo语言的并发模型是CSP（Communicating Sequential Processes），提倡通过通信共享内存而不是通过共享内存而实现通信。\n如果说goroutine是Go程序并发的执行体，channel就是它们之间的连接。channel是可以让一个goroutine发送特定值到另一个goroutine的通信机制。\nChannel是Go中的一个核心类型，你可以把它看成一个管道，通过它并发核心单元就可以发送或者接收数据进行通讯(communication)。\nChannel提供了一种同步的机制，确保在数据发送和接收之间的正确顺序和时机。通过使用channel，我们可以避免在多个goroutine之间共享数据时出现的竞争条件和其他并发问题。\nGo 语言中的通道（channel）是一种特殊的类型。通道像一个传送带或者队列，总是遵循先入先出（First In First Out）的规则，保证收发数据的顺序。每一个通道都是一个具体类型的导管，也就是声明channel的时候需要为其指定元素类型。\nChannel的操作符是箭头 \u003c- (箭头的指向就是数据的流向)。\n二、声明与赋值 1 2 3 4 // var 变量 chan 元素类型 var ch chan string // make(chan 元素类型, [容量]) c := make(chan string, 10) 只声明的chan零值为nil，无论发送与接收都会阻塞 需要使用make创建并赋值，容量可不写或为0 表示无缓冲 无缓冲通道必须至少有一个接收方才能发送成功，同理至少有一个发送放才能接收成功 chan有三种操作 ch \u003c- “abc” 表示发送 \u003c- ch 表示接收 close(ch) 表示关闭 chan有方向，一般用在函数参数声明时，对通道操作进行限制 c chan \u003c- string表示通道c只能发送数据 c \u003c- chan string表示通道c只能接收数据 c chan string表示通道c可以发送和接收数据 panic出现的情况 关闭值为nil的通道，会panic close后再发送数据，会panic 重复close，会panic 阻塞出现的情况 通道为nil，无论发送与接收都会阻塞 无缓冲通道必须至少有一个接收方才能发送成功，同理至少有一个发送放才能接收成功 有缓冲时：缓冲为空时接收方阻塞， 缓冲满时发送方阻塞 关闭通道后接收方能接收数据直到数据为空，但是还会返回数据 v, ok := \u003c- ch此时ok为false，v为对应数据的零值；可用于检测通道是否关闭 三、接收数据 channel 有一个特性：close关闭之后，在发送的时候会 panic，但是在接收的时候，是可以正常接收的。\n1. for-range 1 2 3 for v := range ch { } range ch会一起迭代直到ch关闭，如果没有数据则会阻塞\n2. for{}死循环 1 2 3 4 5 6 7 for { v, ok := \u003c- ch if !ok { break } fmt.Println(v) } for{}列表循环的关键是要判断ch是否已关闭，如果已关闭则可退出死循环\n通道中有数据则会接收到值，否则会阻塞\n3. select 上面两种方式都是从单通道中接收数据，而select可处理多个通道\nselect类似switch, 一次只能处理一个case，它不是循环for select只能用于channel 若想一直处理数据，要在外面加for{}死循环 1 2 3 4 5 6 7 8 9 10 for { select { case v := \u003c- ch: fmt.Println(v) case v2 := \u003c- ch2: fmt.Println(v2) default: break } } 多个case分支满足时，则会伪随机选择一个处理 所有case都不满足时，没有default则阻塞，有default则处理default select能接收数据，也能用于发送数据 case和default都没有的select会永远阻塞 select中没有fallthough break case中可以没有break，即case执行完就退出select了 你也可以认为每个case最后会默认存在break 你加了break就代表提前退出select，break后面的代码不会执行 break不会退出for，除非使用标签进行break或使用goto return跟select,for,switch没关系；退出的是函数 switch有fallthough, 并且fallthough后面的条件不会进行判断 四、原理 hchan结构如下：\n1 2 3 4 5 6 7 8 9 10 11 12 13 type hchan struct { qcount uint // 当前队列中剩余元素个数 dataqsiz uint // 环形队列长度，即可以存放的元素个数 buf unsafe.Pointer // 环形队列指针 elemsize uint16 // 每个元素的大小 closed uint32 // 标识关闭状态 elemtype *_type // 元素类型 sendx uint // 队列下标，指示元素写入时存放到队列中的位置 recvx uint // 队列下标，指示元素从队列的该位置读出 recvq waitq // 等待读消息的goroutine队列，即等待接收队列 sendq waitq // 等待写消息的goroutine队列，即等待发送队列 lock mutex // 互斥锁，chan不允许并发读写 } 五、参考链接 go channel 万字详解 Go Channel的基本使用及底层原理详解 ",
   "wordCount" : "2092",
   "inLanguage": "zh",
-  "image":"https://PheonixHkbxoic.github.io/docs/post/golang-channel.jpeg","datePublished": "2024-01-01T00:00:00Z",
+  "image":"https://PheonixHkbxoic.github.io/post/golang-channel.jpeg","datePublished": "2024-01-01T00:00:00Z",
   "dateModified": "2024-01-01T00:00:00Z",
   "author":{
     "@type": "Person",
@@ -119,14 +119,14 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://PheonixHkbxoic.github.io/docs/posts/golang/channel/"
+    "@id": "https://PheonixHkbxoic.github.io/posts/golang/channel/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "PheonixHkbxoic | docs",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://PheonixHkbxoic.github.io/docs/favicon.ico"
+      "url": "https://PheonixHkbxoic.github.io/favicon.ico"
     }
   }
 }
@@ -148,7 +148,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://PheonixHkbxoic.github.io/docs/" accesskey="h" title="PheonixHkbxoic | docs (Alt + H)">PheonixHkbxoic | docs</a>
+            <a href="https://PheonixHkbxoic.github.io/" accesskey="h" title="PheonixHkbxoic | docs (Alt + H)">PheonixHkbxoic | docs</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -172,7 +172,7 @@
                 </button>
                 <ul class="lang-switch"><li>|</li>
                     <li>
-                        <a href="https://PheonixHkbxoic.github.io/docs/en/" title="English"
+                        <a href="https://PheonixHkbxoic.github.io/en/" title="English"
                             aria-label="English">English</a>
                     </li>
                 </ul>
@@ -180,42 +180,42 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/" title="PheonixHkbxoic | docs">
+                <a href="https://PheonixHkbxoic.github.io/" title="PheonixHkbxoic | docs">
                     <span>主页</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                <a href="https://PheonixHkbxoic.github.io/search/" title="搜索 (Alt &#43; /)" accesskey=/>
                     <span>搜索</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/posts/golang/" title="Golang">
+                <a href="https://PheonixHkbxoic.github.io/posts/golang/" title="Golang">
                     <span>Go</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/posts/" title="文章">
+                <a href="https://PheonixHkbxoic.github.io/posts/" title="文章">
                     <span>文章</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/tags/" title="Tags">
+                <a href="https://PheonixHkbxoic.github.io/tags/" title="Tags">
                     <span>标签</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/categories/" title="Categories">
+                <a href="https://PheonixHkbxoic.github.io/categories/" title="Categories">
                     <span>分类</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/archives/" title="归档">
+                <a href="https://PheonixHkbxoic.github.io/archives/" title="归档">
                     <span>时间轴</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/about/" title="关于">
+                <a href="https://PheonixHkbxoic.github.io/about/" title="关于">
                     <span>‍关于</span>
                 </a>
             </li>
@@ -226,20 +226,20 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://PheonixHkbxoic.github.io/docs/">主页</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/docs/posts/">文章</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/docs/posts/golang/">Golang</a></div>
+    <div class="breadcrumbs"><a href="https://PheonixHkbxoic.github.io/">主页</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/posts/">文章</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/posts/golang/">Golang</a></div>
     <h1 class="post-title">
       Go: 通道
     </h1>
     <div class="post-meta"><span title='2024-01-01 00:00:00 &#43;0000 UTC'>2024-01-01</span> &nbsp;&nbsp;5 分钟, 2092 字, PheonixHkbxoic&nbsp;|&nbsp;语言:
 <ul class="i18n_list">
     <li>
-        <a href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/channel/">English</a>
+        <a href="https://PheonixHkbxoic.github.io/en/posts/golang/channel/">English</a>
     </li>
 </ul>
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="lazy" src="https://PheonixHkbxoic.github.io/docs/post/golang-channel.jpeg" alt="">
+<figure class="entry-cover"><img loading="lazy" src="https://PheonixHkbxoic.github.io/post/golang-channel.jpeg" alt="">
         
 </figure><div class="toc">
     <details  open>
@@ -470,17 +470,17 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://PheonixHkbxoic.github.io/docs/tags/%E9%80%9A%E9%81%93/">通道</a></li>
-      <li><a href="https://PheonixHkbxoic.github.io/docs/tags/channel/">channel</a></li>
-      <li><a href="https://PheonixHkbxoic.github.io/docs/tags/chan/">chan</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/tags/%E9%80%9A%E9%81%93/">通道</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/tags/channel/">channel</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/tags/chan/">chan</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://PheonixHkbxoic.github.io/docs/posts/golang/range/">
+  <a class="prev" href="https://PheonixHkbxoic.github.io/posts/golang/range/">
     <span class="title">« 上一页</span>
     <br>
     <span>Go: 迭代</span>
   </a>
-  <a class="next" href="https://PheonixHkbxoic.github.io/docs/posts/golang/string/">
+  <a class="next" href="https://PheonixHkbxoic.github.io/posts/golang/string/">
     <span class="title">下一页 »</span>
     <br>
     <span>Go: 字符串</span>
@@ -492,7 +492,7 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://PheonixHkbxoic.github.io/docs/">PheonixHkbxoic | docs</a></span>
+    <span>&copy; 2024 <a href="https://PheonixHkbxoic.github.io/">PheonixHkbxoic | docs</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

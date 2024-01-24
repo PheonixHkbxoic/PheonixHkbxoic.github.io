@@ -7,6 +7,6 @@ hideTitle: true
 ---
 
 
-## 关于我
-A javaer, gopher  
+## About
+A javaer, gopher and AI lover  
 coding and coding

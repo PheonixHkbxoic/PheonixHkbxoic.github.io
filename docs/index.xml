@@ -2,126 +2,126 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>PheonixHkbxoic | docs</title>
-    <link>https://PheonixHkbxoic.github.io/docs/</link>
+    <link>https://PheonixHkbxoic.github.io/</link>
     <description>Recent content on PheonixHkbxoic | docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 04 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go: 字典</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/map/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/golang/map/</link>
       <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/map/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/golang/map/</guid>
       <description>字典 一、声明与赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 // 声明 指明key，value的类型 var a map[string]string // 赋值 a = map[string]string{} // 声明并赋值 var b map[string]string = map[string]string{} var c = map[string]string{ &amp;#34;a&amp;#34; : &amp;#34;a&amp;#34;, &amp;#34;b&amp;#34; :</description>
     </item>
     
     <item>
       <title>Go: 切片</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/slice/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/golang/slice/</link>
       <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/slice/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/golang/slice/</guid>
       <description>切片是不定长的特定元素类型的序列,可以理解为动态数组,切片本身不能存储任何数据，都是底层数组存储数据，修改切片的时候修改的是底层数组中的数据,底层实现是一个结构体，包括长度、容量和一个指向实际数组的unsafe.Pointer指针</description>
     </item>
     
     <item>
       <title>Go: 数组</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/array/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/golang/array/</link>
       <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/array/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/golang/array/</guid>
       <description>数组是内存中一片连续的区域，固定长度，元素类型相同，是值类型，大数组值参等值传递效率低 编译时进行类型检查 ，索引越界检查</description>
     </item>
     
     <item>
       <title>Go: 迭代</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/range/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/golang/range/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/range/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/golang/range/</guid>
       <description>迭代数组、切片、映射、字符串和通道,i,v是值传递，修改v数组元素不变， 数组与切片循环前次数已确定，遍历通道直到关闭, 没有数据则会阻塞</description>
     </item>
     
     <item>
       <title>Go: 通道</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/channel/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/golang/channel/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/channel/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/golang/channel/</guid>
       <description>通道 在Go语言中，channel是一种特殊的类型，用于在并发编程中实现不同的goroutine之间的通信和同步。本文将深入探讨golang的</description>
     </item>
     
     <item>
       <title>Go: 字符串</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/string/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/golang/string/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/string/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/golang/string/</guid>
       <description>字符串是不可变的,字符串的赋值并不是拷贝底层的字符串数组，而是数组指针和长度字段的拷贝,重新赋值 不会改变原来变量的地址</description>
     </item>
     
     <item>
       <title>Go: 变量</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/variable/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/golang/variable/</link>
       <pubDate>Wed, 20 Dec 2023 22:15:37 +0000</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/variable/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/golang/variable/</guid>
       <description>一、变量声明与赋值 Go 中命名规则是，名称以字母或下划线开头，后面可跟任意数量的字符、数字和下划线，字符区分大小写，名称本身没有长度限制，但是 Go</description>
     </item>
     
     <item>
       <title>感悟</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/life/life-perception-2023-12-29/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/life/life-perception-2023-12-29/</link>
       <pubDate>Fri, 29 Dec 2023 11:13:42 +0800</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/life/life-perception-2023-12-29/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/life/life-perception-2023-12-29/</guid>
       <description>生活是一场修行 不断感悟，不断修行</description>
     </item>
     
     <item>
       <title>旅行</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/life/life-travel-2023-12-30/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/life/life-travel-2023-12-30/</link>
       <pubDate>Fri, 29 Dec 2023 11:13:42 +0800</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/life/life-travel-2023-12-30/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/life/life-travel-2023-12-30/</guid>
       <description>生活是一场旅行 旅行的意义就是在路上，然后看不同的风景</description>
     </item>
     
     <item>
       <title>java</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/java/spring/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/java/spring/</link>
       <pubDate>Fri, 29 Dec 2023 11:13:18 +0800</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/java/spring/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/java/spring/</guid>
       <description>Spring Java是世界上最好的语言.go SpringBoot nacos SpringCloud fein,raibon</description>
     </item>
     
     <item>
       <title>python</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/python/gpt/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/python/gpt/</link>
       <pubDate>Fri, 29 Dec 2023 11:13:18 +0800</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/python/gpt/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/python/gpt/</guid>
       <description>GPT python ai crawler</description>
     </item>
     
     <item>
       <title>关于</title>
-      <link>https://PheonixHkbxoic.github.io/docs/about/</link>
+      <link>https://PheonixHkbxoic.github.io/about/</link>
       <pubDate>Wed, 20 Dec 2023 14:46:08 +0000</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/about/</guid>
-      <description>关于我 A javaer, gopher coding and coding</description>
+      <guid>https://PheonixHkbxoic.github.io/about/</guid>
+      <description>关于我 A javaer, gopher and AI lover coding and coding</description>
     </item>
     
     
     <item>
       <title>链接</title>
-      <link>https://PheonixHkbxoic.github.io/docs/links/</link>
+      <link>https://PheonixHkbxoic.github.io/links/</link>
       <pubDate>Wed, 20 Dec 2023 14:46:08 +0800</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/links/</guid>
+      <guid>https://PheonixHkbxoic.github.io/links/</guid>
       <description>友情链接 Hugo</description>
     </item>
     

@@ -65,9 +65,14 @@
 {{- end }}
 
 <article class="{{ $class }}" style="flex: none; text-align: center; margin: 5px; border-radius: 10px; width: 200px;min-height: 160px; background-color: darkcyan;">
-  {{- $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
+  {{- $isHidden := ((or .Params.cover.hidden site.Params.cover.hidden) | default site.Params.cover.hiddenInList) }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
-  <header class="entry-top" style="min-height: 50px;"></header>
+  {{- if $isHidden }}
+  <header class="entry-top" style="min-height: 20px;"></header>
+  {{- else }}
+  <header class="entry-top"></header>
+  {{- end }}
+  
   <div class="entry-header">
     <h2>
       {{- .Title }}

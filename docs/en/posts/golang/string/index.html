@@ -9,19 +9,19 @@
 <meta name="keywords" content="golang, 字符串, string">
 <meta name="description" content="字符串是不可变的,字符串的赋值并不是拷贝底层的字符串数组，而是数组指针和长度字段的拷贝,重新赋值 不会改变原来变量的地址">
 <meta name="author" content="PheonixHkbxoic">
-<link rel="canonical" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/string/">
-<link crossorigin="anonymous" href="/docs/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/docs/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+<link rel="canonical" href="https://PheonixHkbxoic.github.io/en/posts/golang/string/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://PheonixHkbxoic.github.io/docs/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://PheonixHkbxoic.github.io/docs/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://PheonixHkbxoic.github.io/docs/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://PheonixHkbxoic.github.io/docs/apple-touch-icon.png">
-<link rel="mask-icon" href="https://PheonixHkbxoic.github.io/docs/safari-pinned-tab.svg">
+<link rel="icon" href="https://PheonixHkbxoic.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://PheonixHkbxoic.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://PheonixHkbxoic.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://PheonixHkbxoic.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://PheonixHkbxoic.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/string/">
-<link rel="alternate" hreflang="zh" href="https://PheonixHkbxoic.github.io/docs/posts/golang/string/">
+<link rel="alternate" hreflang="en" href="https://PheonixHkbxoic.github.io/en/posts/golang/string/">
+<link rel="alternate" hreflang="zh" href="https://PheonixHkbxoic.github.io/posts/golang/string/">
 <noscript>
     <style>
         #theme-toggle,
@@ -61,13 +61,13 @@
 </noscript><meta property="og:title" content="Go: string" />
 <meta property="og:description" content="字符串是不可变的,字符串的赋值并不是拷贝底层的字符串数组，而是数组指针和长度字段的拷贝,重新赋值 不会改变原来变量的地址" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://PheonixHkbxoic.github.io/docs/en/posts/golang/string/" />
-<meta property="og:image" content="https://PheonixHkbxoic.github.io/docs/post/golang-string.jpeg" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://PheonixHkbxoic.github.io/en/posts/golang/string/" />
+<meta property="og:image" content="https://PheonixHkbxoic.github.io/post/golang-string.jpeg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-01-01T00:00:00+00:00" />
 <meta property="article:modified_time" content="2024-01-01T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://PheonixHkbxoic.github.io/docs/post/golang-string.jpeg" />
+<meta name="twitter:image" content="https://PheonixHkbxoic.github.io/post/golang-string.jpeg" />
 <meta name="twitter:title" content="Go: string"/>
 <meta name="twitter:description" content="字符串是不可变的,字符串的赋值并不是拷贝底层的字符串数组，而是数组指针和长度字段的拷贝,重新赋值 不会改变原来变量的地址"/>
 
@@ -81,13 +81,19 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Article",
-      "item": "https://PheonixHkbxoic.github.io/docs/en/posts/"
+      "item": "https://PheonixHkbxoic.github.io/en/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
+      "name": "Golang",
+      "item": "https://PheonixHkbxoic.github.io/en/posts/golang/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
       "name": "Go: string",
-      "item": "https://PheonixHkbxoic.github.io/docs/en/posts/golang/string/"
+      "item": "https://PheonixHkbxoic.github.io/en/posts/golang/string/"
     }
   ]
 }
@@ -105,7 +111,7 @@
   "articleBody": "字符串 声明与赋值 1 2 3 4 5 var a string var a string = \"x\" var a = \"x\" a := \"x\\\"x\" a := `x\"x` 数据结构 1 2 3 4 type StringHeader struct { Data uintptr Len int } Data是数据的地址，Len是数据的长度\nuintptr不参与gc\n本质上是字节数组\n字符串是不可变的\n字符串的赋值并不是拷贝底层的字符串数组，而是数组指针和长度字段的拷贝\n1 2 3 4 5 6 7 8 9 a := \"hello,world\" b := a fmt.Println(a) fmt.Println(b) fmt.Printf(\"%x, %x\\n\", \u0026a, \u0026b) aptr := (*reflect.StringHeader) (unsafe.Pointer(\u0026a)) bptr := (*reflect.StringHeader) (unsafe.Pointer(\u0026b)) fmt.Println(\"a data ptr:\", unsafe.Pointer(aptr.Data)) fmt.Println(\"b data ptr:\", unsafe.Pointer(bptr.Data)) 输出\n1 2 3 4 5 6 7 8 9 10 11 // a,b的字符串一样 hello,world hello,world // a,b的指针不一样，显然b是对a的StringHeader复制了一份 c0000543d0, c0000543e0 // a,b的Data一样，指向的数据是同一个 a data ptr: 0xfda3cf b data ptr: 0xfda3cf // 所以 字符串的赋值是浅拷贝 重新赋值 不会改变原来变量的地址，即StringHeader还是同一个，但Data已指向了新的数据地址\n其他操作都是深拷贝，如传参，切分，拼接，转换\n与字节数组、字符数组的相互转换 字符串转换成字节数组\nbs := []byte(a)\n字节数组转换成字符串\nb := string(bs)\n需要说明的是 字节数组并不等于字符数组，因为非ASCII字符一般会占多个字节\n所以字节数并不一定等于字符数 字符串转换成字符数组\ncs := []rune(a)\n字符数组转换成字符串\nc := string(cs)\n字符串拼接 使用+直接拼接 使用Strings.Builder 使用strings.Join方法 字符串比较 == 区分大小写，比Compare快 strings.Compare 区分大小写 strings.EqualFold 不区分大小写 ",
   "wordCount" : "540",
   "inLanguage": "en",
-  "image":"https://PheonixHkbxoic.github.io/docs/post/golang-string.jpeg","datePublished": "2024-01-01T00:00:00Z",
+  "image":"https://PheonixHkbxoic.github.io/post/golang-string.jpeg","datePublished": "2024-01-01T00:00:00Z",
   "dateModified": "2024-01-01T00:00:00Z",
   "author":{
     "@type": "Person",
@@ -113,14 +119,14 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://PheonixHkbxoic.github.io/docs/en/posts/golang/string/"
+    "@id": "https://PheonixHkbxoic.github.io/en/posts/golang/string/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "PheonixHkbxoic | docs",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://PheonixHkbxoic.github.io/docs/favicon.ico"
+      "url": "https://PheonixHkbxoic.github.io/favicon.ico"
     }
   }
 }
@@ -142,7 +148,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://PheonixHkbxoic.github.io/docs/en/" accesskey="h" title="PheonixHkbxoic | docs (Alt + H)">PheonixHkbxoic | docs</a>
+            <a href="https://PheonixHkbxoic.github.io/en/" accesskey="h" title="PheonixHkbxoic | docs (Alt + H)">PheonixHkbxoic | docs</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -166,7 +172,7 @@
                 </button>
                 <ul class="lang-switch"><li>|</li>
                     <li>
-                        <a href="https://PheonixHkbxoic.github.io/docs/" title="中文"
+                        <a href="https://PheonixHkbxoic.github.io/" title="中文"
                             aria-label="中文">中文</a>
                     </li>
                 </ul>
@@ -174,42 +180,42 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://PheonixHkbxoic.github.io/en/docs/" title="PheonixHkbxoic | docs">
+                <a href="https://PheonixHkbxoic.github.io/en/" title="PheonixHkbxoic | docs">
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/en/docs/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://PheonixHkbxoic.github.io/en/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/en/" title="Go">
+                <a href="https://PheonixHkbxoic.github.io/en/posts/golang/" title="Golang">
                     <span>Go</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/en/docs/posts/" title="Article">
+                <a href="https://PheonixHkbxoic.github.io/en/posts/" title="Article">
                     <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/en/docs/tags/" title="Tags">
+                <a href="https://PheonixHkbxoic.github.io/en/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/en/docs/categories/" title="Categories">
+                <a href="https://PheonixHkbxoic.github.io/en/categories/" title="Categories">
                     <span>Categories</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/docs/en/" title="Archives">
+                <a href="https://PheonixHkbxoic.github.io/en/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://PheonixHkbxoic.github.io/en/docs/about/" title="About">
+                <a href="https://PheonixHkbxoic.github.io/en/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
@@ -220,20 +226,20 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://PheonixHkbxoic.github.io/docs/en/">Home</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/docs/en/posts/">Article</a></div>
+    <div class="breadcrumbs"><a href="https://PheonixHkbxoic.github.io/en/">Home</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/en/posts/">Article</a>&nbsp;»&nbsp;<a href="https://PheonixHkbxoic.github.io/en/posts/golang/">Golang</a></div>
     <h1 class="post-title">
       Go: string
     </h1>
     <div class="post-meta"><span title='2024-01-01 00:00:00 &#43;0000 UTC'>2024-01-01</span> &nbsp;&nbsp;2 min, 540 words, PheonixHkbxoic&nbsp;|&nbsp;Translations:
 <ul class="i18n_list">
     <li>
-        <a href="https://PheonixHkbxoic.github.io/docs/posts/golang/string/">中文</a>
+        <a href="https://PheonixHkbxoic.github.io/posts/golang/string/">中文</a>
     </li>
 </ul>
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="lazy" src="https://PheonixHkbxoic.github.io/docs/post/golang-string.jpeg" alt="">
+<figure class="entry-cover"><img loading="lazy" src="https://PheonixHkbxoic.github.io/post/golang-string.jpeg" alt="">
         
 </figure><div class="toc">
     <details  open>
@@ -408,17 +414,17 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://PheonixHkbxoic.github.io/docs/en/tags/golang/">golang</a></li>
-      <li><a href="https://PheonixHkbxoic.github.io/docs/en/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a></li>
-      <li><a href="https://PheonixHkbxoic.github.io/docs/en/tags/string/">string</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/en/tags/golang/">golang</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/en/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a></li>
+      <li><a href="https://PheonixHkbxoic.github.io/en/tags/string/">string</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/channel/">
+  <a class="prev" href="https://PheonixHkbxoic.github.io/en/posts/golang/channel/">
     <span class="title">« Prev</span>
     <br>
     <span>Go: Channel</span>
   </a>
-  <a class="next" href="https://PheonixHkbxoic.github.io/docs/en/posts/golang/variable/">
+  <a class="next" href="https://PheonixHkbxoic.github.io/en/posts/golang/variable/">
     <span class="title">Next »</span>
     <br>
     <span>Go: variable</span>
@@ -430,7 +436,7 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://PheonixHkbxoic.github.io/docs/en/">PheonixHkbxoic | docs</a></span>
+    <span>&copy; 2024 <a href="https://PheonixHkbxoic.github.io/en/">PheonixHkbxoic | docs</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

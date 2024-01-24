@@ -1,5 +1,7 @@
 
-BaseUrl: "https://PheonixHkbxoic.github.io/docs/"
+BaseUrl: "https://PheonixHkbxoic.github.io/"
+# hugo是按域名处理的，如果域名后有后缀时 多语言情况下languageCode是加在了域名后en/docs/ 所以会有问题
+#BaseUrl: "https://PheonixHkbxoic.github.io/docs/"
 Title: "PheonixHkbxoic | docs"
 theme: "PaperMod"
 
@@ -28,7 +30,7 @@ permalinks:
   # post: "/:year/:month/:day/:title/"
 
 #defaultContentLanguage: en # 最顶部首先展示的语言页面
-#defaultContentLanguageInSubdir: true
+# defaultContentLanguageInSubdir: true
 outputs:
     home: ["HTML", "RSS", "JSON"]
 
@@ -71,6 +73,7 @@ languages:
           pageRef: about
           weight: 50
   en:
+    # disabled: true
     languageCode: "en"
     languageName: "English"
     menu:

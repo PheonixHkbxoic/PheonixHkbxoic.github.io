@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on PheonixHkbxoic | docs</title>
-    <link>https://PheonixHkbxoic.github.io/docs/categories/</link>
+    <link>https://PheonixHkbxoic.github.io/categories/</link>
     <description>Recent content in Categories on PheonixHkbxoic | docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 04 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>golang</title>
-      <link>https://PheonixHkbxoic.github.io/docs/categories/golang/</link>
+      <link>https://PheonixHkbxoic.github.io/categories/golang/</link>
       <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/categories/golang/</guid>
+      <guid>https://PheonixHkbxoic.github.io/categories/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>life</title>
-      <link>https://PheonixHkbxoic.github.io/docs/categories/life/</link>
+      <link>https://PheonixHkbxoic.github.io/categories/life/</link>
       <pubDate>Fri, 29 Dec 2023 11:13:42 +0800</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/categories/life/</guid>
+      <guid>https://PheonixHkbxoic.github.io/categories/life/</guid>
       <description></description>
     </item>
     
     <item>
       <title>java</title>
-      <link>https://PheonixHkbxoic.github.io/docs/categories/java/</link>
+      <link>https://PheonixHkbxoic.github.io/categories/java/</link>
       <pubDate>Fri, 29 Dec 2023 11:13:18 +0800</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/categories/java/</guid>
+      <guid>https://PheonixHkbxoic.github.io/categories/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>https://PheonixHkbxoic.github.io/docs/categories/python/</link>
+      <link>https://PheonixHkbxoic.github.io/categories/python/</link>
       <pubDate>Fri, 29 Dec 2023 11:13:18 +0800</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/categories/python/</guid>
+      <guid>https://PheonixHkbxoic.github.io/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tech</title>
-      <link>https://PheonixHkbxoic.github.io/docs/categories/tech/</link>
+      <link>https://PheonixHkbxoic.github.io/categories/tech/</link>
       <pubDate>Fri, 29 Dec 2023 11:13:18 +0800</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/categories/tech/</guid>
+      <guid>https://PheonixHkbxoic.github.io/categories/tech/</guid>
       <description></description>
     </item>
     

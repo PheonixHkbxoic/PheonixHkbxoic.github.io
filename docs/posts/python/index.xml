@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on PheonixHkbxoic | docs</title>
-    <link>https://PheonixHkbxoic.github.io/docs/posts/python/</link>
+    <link>https://PheonixHkbxoic.github.io/posts/python/</link>
     <description>Recent content in Python on PheonixHkbxoic | docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 20 Dec 2023 22:15:37 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/posts/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Dec 2023 22:15:37 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/posts/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/python/gpt/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/python/gpt/</link>
       <pubDate>Fri, 29 Dec 2023 11:13:18 +0800</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/python/gpt/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/python/gpt/</guid>
       <description>GPT python ai crawler</description>
     </item>
     

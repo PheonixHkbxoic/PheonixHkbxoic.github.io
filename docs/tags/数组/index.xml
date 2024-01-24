@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>数组 on PheonixHkbxoic | docs</title>
-    <link>https://PheonixHkbxoic.github.io/docs/tags/%E6%95%B0%E7%BB%84/</link>
+    <link>https://PheonixHkbxoic.github.io/tags/%E6%95%B0%E7%BB%84/</link>
     <description>Recent content in 数组 on PheonixHkbxoic | docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/docs/tags/%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://PheonixHkbxoic.github.io/tags/%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go: 数组</title>
-      <link>https://PheonixHkbxoic.github.io/docs/posts/golang/array/</link>
+      <link>https://PheonixHkbxoic.github.io/posts/golang/array/</link>
       <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://PheonixHkbxoic.github.io/docs/posts/golang/array/</guid>
+      <guid>https://PheonixHkbxoic.github.io/posts/golang/array/</guid>
       <description>数组是内存中一片连续的区域，固定长度，元素类型相同，是值类型，大数组值参等值传递效率低 编译时进行类型检查 ，索引越界检查</description>
     </item>
     
