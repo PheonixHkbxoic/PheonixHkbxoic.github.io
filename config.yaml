@@ -4,6 +4,9 @@ BaseUrl: "https://PheonixHkbxoic.github.io/"
 #BaseUrl: "https://PheonixHkbxoic.github.io/docs/"
 Title: "PheonixHkbxoic | docs"
 theme: "PaperMod"
+Params:
+  label:
+    icon: favicon.ico
 
 defaultContentLanguage: "zh"
 # enableInlineShortcodes: true
